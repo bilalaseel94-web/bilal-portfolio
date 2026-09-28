@@ -1,0 +1,110 @@
+'use strict';
+
+// Keep keyboard focus and panel visibility local to each tab group.
+document.querySelectorAll('[data-tabs]').forEach(group => {
+  const tabs = [...group.querySelectorAll('[role="tab"]')];
+  const panels = [...group.querySelectorAll('[role="tabpanel"]')];
+  function selectTab(tab, moveFocus = false) {
+    tabs.forEach(item => {
+      const selected = item === tab;
+      item.setAttribute('aria-selected', String(selected));
+      item.tabIndex = selected ? 0 : -1;
+    });
+    panels.forEach(panel => { panel.hidden = panel.id !== tab.getAttribute('aria-controls'); });
+    if (moveFocus) tab.focus();
+  }
+  tabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectTab(tab));
+    tab.addEventListener('keydown', event => {
+      if (event.altKey || event.ctrlKey || event.metaKey) return;
+      const horizontal = document.documentElement.dir === 'rtl' ? -1 : 1;
+      const next = {ArrowRight:(index + horizontal + tabs.length) % tabs.length, ArrowDown:(index + 1) % tabs.length,
+        ArrowLeft:(index - horizontal + tabs.length) % tabs.length, ArrowUp:(index - 1 + tabs.length) % tabs.length,
+        Home:0, End:tabs.length - 1}[event.key];
+      if (next !== undefined) { event.preventDefault(); selectTab(tabs[next], true); }
+    });
+  });
+});
+
+const progress = document.querySelector('.reading-progress');
+const header = document.querySelector('.site-header');
+let framePending = false;
+function updateScroll() {
+  const range = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = `scaleX(${range > 0 ? Math.min(1, Math.max(0, scrollY / range)) : 0})`;
+  header.classList.toggle('scrolled', scrollY > 20);
+  framePending = false;
+}
+addEventListener('scroll', () => {
+  if (!framePending) { framePending = true; requestAnimationFrame(updateScroll); }
+}, {passive:true});
+addEventListener('resize', updateScroll);
+updateScroll();
+
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+if ('IntersectionObserver' in window) {
+  const navLinks = [...document.querySelectorAll('.main-navigation a')];
+  const sectionObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navLinks.forEach(link => {
+        if (link.getAttribute('href') === '#' + entry.target.id) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  }, {rootMargin:'-15% 0px -50% 0px'});
+  document.querySelectorAll('main section[id]').forEach(section => sectionObserver.observe(section));
+  if (!reduceMotion.matches) {
+    document.body.classList.add('motion-enabled');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.remove('waiting'); revealObserver.unobserve(entry.target); }
+      });
+    }, {threshold:0.05});
+    document.querySelectorAll('.reveal').forEach(element => {
+      if (element.getBoundingClientRect().top > innerHeight) element.classList.add('waiting');
+      revealObserver.observe(element);
+    });
+    reduceMotion.addEventListener('change', event => {
+      if (event.matches) document.querySelectorAll('.waiting').forEach(element => element.classList.remove('waiting'));
+    });
+  }
+}
+
+// Both DrayTek controls reveal the same on-page experience, including from another tab.
+const draytekPanel = document.getElementById('draytek-experience');
+const draytekTriggers = [...document.querySelectorAll('[data-draytek-trigger]')];
+const productsTab = document.getElementById('skill-products');
+draytekTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const open = draytekPanel.hidden || productsTab.getAttribute('aria-selected') !== 'true';
+    productsTab.click();
+    draytekPanel.hidden = !open;
+    draytekTriggers.forEach(button => {
+      button.setAttribute('aria-expanded', String(open));
+      const label = button.querySelector('.brand-action-label, .product-action-label');
+      label.firstChild.textContent = (open ? button.dataset.labelOpen : button.dataset.labelClosed) + ' ';
+      label.querySelector('span').textContent = open ? '−' : '+';
+      if (button.classList.contains('brand-action')) button.setAttribute('aria-label', open ? button.dataset.ariaOpen : button.dataset.ariaClosed);
+    });
+    if (trigger.classList.contains('brand-action')) {
+      const control = document.getElementById('draytek-toggle');
+      control.focus({preventScroll:true});
+      control.scrollIntoView({block:'center', behavior:reduceMotion.matches ? 'auto' : 'smooth'});
+    }
+    updateScroll();
+  });
+});
+
+
+// Keep the same section when choosing another language; links also work without JS.
+const languageLinks = [...document.querySelectorAll('[data-language-link]')];
+function updateLanguageLinks() {
+  languageLinks.forEach(link => {
+    const destination = new URL(link.getAttribute('href'), location.origin);
+    destination.hash = location.hash;
+    link.setAttribute('href', destination.pathname + destination.hash);
+  });
+}
+updateLanguageLinks();
+addEventListener('hashchange', updateLanguageLinks);
