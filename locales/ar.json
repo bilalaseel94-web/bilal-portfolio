@@ -135,7 +135,6 @@
   "Design feedback": "ملاحظات التصميم",
   "Iterative improvement": "التحسين المتتابع",
   "How the site was built": "كيف بُني الموقع",
-  "HTML provides the structure, CSS handles responsive styling, and JavaScript powers the interactive sections. Cloudflare Pages hosts the static files and manages HTTPS.": "يوفّر HTML البنية، ويتولى CSS التصميم المتجاوب، ويشغّل JavaScript الأقسام التفاعلية. وتستضيف Cloudflare Pages الملفات الثابتة وتدير HTTPS.",
   "Implementation was AI-assisted; my role was to set requirements, review the content and design, and guide refinements.": "نُفّذ الموقع بمساعدة الذكاء الاصطناعي؛ وكان دوري تحديد المتطلبات، ومراجعة المحتوى والتصميم، وتوجيه التحسينات.",
   "TECHNOLOGIES USED IN THIS PROJECT": "التقنيات المستخدمة في المشروع",
   "Structure & content": "البنية والمحتوى",
@@ -173,5 +172,6 @@
   "Choose language": "اختر اللغة",
   "Hide tasks": "إخفاء المهام",
   "Hide DrayTek experience": "إخفاء خبرتي مع DrayTek",
-  "View source on GitHub": "اطّلع على الكود في GitHub"
+  "View source on GitHub": "اطّلع على الكود في GitHub",
+  "HTML provides the structure, CSS handles responsive styling, and JavaScript powers the interactive sections. Cloudflare Pages hosts the static files and manages HTTPS. GitHub stores the source and runs automated checks before publication.": "يوفّر HTML البنية، ويتولى CSS التصميم المتجاوب، ويشغّل JavaScript الأقسام التفاعلية. وتستضيف Cloudflare Pages الملفات الثابتة وتدير HTTPS. يحفظ GitHub الكود ويشغّل فحوصًا آلية قبل النشر."
 }

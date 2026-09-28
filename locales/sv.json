@@ -135,7 +135,6 @@
   "Design feedback": "Designåterkoppling",
   "Iterative improvement": "Stegvis förbättring",
   "How the site was built": "Så byggdes webbplatsen",
-  "HTML provides the structure, CSS handles responsive styling, and JavaScript powers the interactive sections. Cloudflare Pages hosts the static files and manages HTTPS.": "HTML ger strukturen, CSS sköter den responsiva utformningen och JavaScript driver de interaktiva delarna. Cloudflare Pages publicerar de statiska filerna och hanterar HTTPS.",
   "Implementation was AI-assisted; my role was to set requirements, review the content and design, and guide refinements.": "Implementeringen gjordes med AI-stöd. Min roll var att formulera krav, granska innehåll och design samt vägleda förbättringar.",
   "TECHNOLOGIES USED IN THIS PROJECT": "TEKNIKER SOM ANVÄNDES I PROJEKTET",
   "Structure & content": "Struktur och innehåll",
@@ -173,5 +172,6 @@
   "Choose language": "Välj språk",
   "Hide tasks": "Dölj uppgifter",
   "Hide DrayTek experience": "Dölj min erfarenhet av DrayTek",
-  "View source on GitHub": "Visa källkoden på GitHub"
+  "View source on GitHub": "Visa källkoden på GitHub",
+  "HTML provides the structure, CSS handles responsive styling, and JavaScript powers the interactive sections. Cloudflare Pages hosts the static files and manages HTTPS. GitHub stores the source and runs automated checks before publication.": "HTML ger strukturen, CSS sköter den responsiva utformningen och JavaScript driver de interaktiva delarna. Cloudflare Pages publicerar de statiska filerna och hanterar HTTPS. GitHub lagrar källkoden och kör automatiska kontroller före publicering."
 }
