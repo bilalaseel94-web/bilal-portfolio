@@ -208,7 +208,7 @@ html[dir="rtl"] .source-files code{font-family:ui-monospace,monospace}
 @media(max-width:420px){.header-inner .language-switch{margin-inline-start:auto}.main-navigation{gap:10px;font-size:.62rem}.main-navigation .nav-contact{padding:6px 9px}html[lang="sv"] .hero h1{font-size:2.2rem}}
 @media print{.language-switch{display:none}}
 
-/* Technical presentation: evidence in the hero; a small portrait only in About. */
+/* Technical presentation: visible experience and full-width skills. */
 .hero-technical{grid-template-columns:minmax(0,1.7fr) minmax(240px,.8fr);gap:56px;padding-top:35px;padding-bottom:24px}
 .hero-technical .hero-copy{padding-block:24px}
 .hero-technical .hero-intro{max-width:60ch}
@@ -229,3 +229,13 @@ html[dir] .hero-technical .hero-facts>div+div{border:0;padding:0}
 
 /* The source link opens the public project and its explanation. */
 .source-link{display:inline-flex;align-items:center;gap:14px;margin-top:23px;padding:12px 17px;border:1px solid var(--accent);border-radius:8px;color:var(--accent);font-size:.8rem;line-height:1.5;text-decoration:none}.source-link:hover,.source-link:focus-visible{background:#cde6a512;outline:2px solid var(--accent);outline-offset:3px}
+
+/* Personal identity stays at the top, with a restrained frameless portrait. */
+.hero-with-portrait{grid-template-columns:minmax(0,1.8fr) minmax(220px,.8fr);gap:24px 52px;align-items:center}
+.hero-with-portrait .hero-portrait{display:block;width:250px;max-width:100%;height:auto;justify-self:center;align-self:center;object-fit:contain;mask-image:linear-gradient(to bottom,#000 0%,#000 83%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 83%,transparent 100%)}
+.hero-with-portrait .hero-facts{grid-column:1/-1;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;border-inline-start:0;border-block:1px solid var(--line);padding:21px 0;margin-top:0}
+html[dir] .hero-with-portrait .hero-facts>div+div{padding-inline-start:25px;border-inline-start:1px solid var(--line)}
+.hero-with-portrait .hero-facts p{font-size:.67rem}
+.perspective-summary{display:block}
+@media(max-width:1050px) and (min-width:761px){.hero-with-portrait{grid-template-columns:minmax(0,1.8fr) minmax(180px,.8fr);gap:20px 28px}.hero-with-portrait .hero-portrait{width:215px}}
+@media(max-width:760px){.hero-with-portrait{display:grid;grid-template-columns:1fr;gap:16px;padding-top:18px}.hero-with-portrait .hero-portrait{grid-row:1;width:136px;justify-self:start}.hero-with-portrait .hero-copy{grid-row:2;padding:0}.hero-with-portrait .hero-facts{grid-row:3;gap:12px;padding:20px 0;margin-top:10px}html[dir] .hero-with-portrait .hero-facts>div+div{padding-inline-start:12px}.hero-with-portrait .hero-facts p{font-size:.56rem}.hero-with-portrait h1{margin-top:14px}}
