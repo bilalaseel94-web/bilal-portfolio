@@ -19,6 +19,8 @@ I defined the requirements, supplied and checked the professional content, revie
 
 No framework or runtime backend is required for visitors. Google Fonts is loaded with system-font fallbacks. There is no contact form or analytics script in this project. Company and product names describe experience, not endorsement.
 
+The contact section shows the owner's explicitly approved Hotmail address, an email link, a copy action and his LinkedIn profile. It does not send messages from the website. Other private contact information remains excluded from the public build.
+
 ## Try it locally
 
 Use Python 3.12 or newer and Node.js 22 for the syntax check:

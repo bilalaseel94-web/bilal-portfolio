@@ -7,7 +7,7 @@ import json, re
 PROJECT = Path(__file__).resolve().parent.parent
 ROOT = PROJECT / 'dist'
 INVARIANT = set(json.loads((PROJECT / 'locales/invariant-text.json').read_text(encoding='utf-8')))
-TEXT_ATTRIBUTES = {'alt', 'aria-label', 'data-label-open', 'data-label-closed', 'data-aria-open', 'data-aria-closed'}
+TEXT_ATTRIBUTES = {'alt', 'aria-label', 'data-label-open', 'data-label-closed', 'data-aria-open', 'data-aria-closed', 'data-copy-success', 'data-copy-error'}
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'param', 'source', 'track', 'wbr'}
 
 class Localizer(HTMLParser):

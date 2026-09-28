@@ -250,5 +250,15 @@
   "Remote access & mobile connectivity": "الوصول عن بُعد والاتصال الخلوي",
   "Use VPN access during remote investigations and examine LTE connectivity issues, sharing findings when provider or engineering input is needed.": "أستخدم VPN أثناء تشخيص الأعطال عن بُعد، وأفحص مشكلات اتصال LTE، وأشارك النتائج عند الحاجة إلى تدخل مزود الخدمة أو المهندسين.",
   "Voice fault investigation": "تشخيص أعطال الاتصال الصوتي",
-  "Review voice and connectivity symptoms alongside logs, coordinate checks and verify recovery with colleagues, engineers and service providers.": "أراجع أعراض مشكلات الصوت والاتصال مع السجلات، وأنسّق الفحوص وأتحقق من استعادة الخدمة مع الزملاء والمهندسين ومزودي الخدمة."
+  "Review voice and connectivity symptoms alongside logs, coordinate checks and verify recovery with colleagues, engineers and service providers.": "أراجع أعراض مشكلات الصوت والاتصال مع السجلات، وأنسّق الفحوص وأتحقق من استعادة الخدمة مع الزملاء والمهندسين ومزودي الخدمة.",
+  "View my LinkedIn profile (opens in a new tab)": "عرض ملفي على LinkedIn (يفتح في تبويب جديد)",
+  "GET IN TOUCH": "للتواصل",
+  "Contact Bilal": "تواصل مع بلال",
+  "To discuss a role or request my CV, contact me directly.": "لمناقشة فرصة عمل أو طلب سيرتي الذاتية، تواصل معي مباشرةً.",
+  "View my LinkedIn profile": "عرض ملفي على LinkedIn",
+  "Experience, updates and connections": "الخبرات والمستجدات والتواصل المهني",
+  "Email me": "راسلني بالبريد",
+  "Copy email": "نسخ البريد",
+  "Email copied": "تم نسخ البريد",
+  "Copy unavailable. Select the address to copy it.": "تعذّر النسخ التلقائي. حدّد العنوان لنسخه."
 }

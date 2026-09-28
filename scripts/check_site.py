@@ -14,6 +14,8 @@ OUTPUT = PROJECT / 'site-build'
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link',
         'meta', 'param', 'source', 'track', 'wbr'}
 SOURCE_URL = 'https://github.com/bilalaseel94-web/bilal-portfolio'
+# The owner explicitly approved this one public contact address.
+PUBLIC_EMAIL = 'bilal.aseel@hotmail.com'
 
 
 def require(condition, message):
@@ -85,7 +87,10 @@ def build_site():
         current = [a['data-language-link'] for a in check.language_links if a.get('aria-current') == 'page']
         require(current == [locale], filename + ': wrong current language')
         require(all(c in check.ids for c in check.controls), filename + ': broken accessible control')
-        require(not any(word in html.lower() for word in ('mailto:', 'hotmail', '+44 7883', 'c:\\users\\')), filename + ': unexpected private information')
+        email_links = [ref for ref in check.refs if ref.lower().startswith('mailto:')]
+        require(email_links == ['mailto:' + PUBLIC_EMAIL], filename + ': unexpected email link')
+        scrubbed = html.lower().replace('mailto:' + PUBLIC_EMAIL, '').replace(PUBLIC_EMAIL, '')
+        require(not any(word in scrubbed for word in ('mailto:', 'hotmail', '+44 7883', 'c:\\users\\')), filename + ': unexpected private information')
         for ref in check.refs:
             url = urlparse(ref)
             if url.scheme or url.netloc:

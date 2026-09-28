@@ -128,6 +128,22 @@ networkTopics.forEach(button => button.addEventListener('click', () => {
 }));
 
 const themeButton = document.querySelector('.theme-toggle');
+
+const emailCopyButton = document.querySelector('.copy-email');
+emailCopyButton.addEventListener('click', async () => {
+  const status = document.getElementById('email-copy-status');
+  status.textContent = '';
+  emailCopyButton.disabled = true;
+  try {
+    await navigator.clipboard.writeText(document.getElementById('contact-email-address').textContent.trim());
+    status.textContent = emailCopyButton.dataset.copySuccess;
+  } catch (_) {
+    status.textContent = emailCopyButton.dataset.copyError;
+  } finally {
+    emailCopyButton.disabled = false;
+  }
+});
+
 function updateThemeLabel() {
   themeButton.setAttribute('aria-label', document.documentElement.dataset.theme === 'light' ? themeButton.dataset.labelOpen : themeButton.dataset.labelClosed);
 }

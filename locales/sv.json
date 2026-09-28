@@ -250,5 +250,15 @@
   "Remote access & mobile connectivity": "Fjärråtkomst och mobil anslutning",
   "Use VPN access during remote investigations and examine LTE connectivity issues, sharing findings when provider or engineering input is needed.": "Använder VPN vid fjärrfelsökning och undersöker LTE-anslutningsproblem samt delar resultaten när leverantörer eller tekniker behöver medverka.",
   "Voice fault investigation": "Felsökning av telefoni",
-  "Review voice and connectivity symptoms alongside logs, coordinate checks and verify recovery with colleagues, engineers and service providers.": "Granskar symtom på telefoni- och anslutningsproblem tillsammans med loggar, samordnar kontroller och verifierar återställningen med kollegor, tekniker och leverantörer."
+  "Review voice and connectivity symptoms alongside logs, coordinate checks and verify recovery with colleagues, engineers and service providers.": "Granskar symtom på telefoni- och anslutningsproblem tillsammans med loggar, samordnar kontroller och verifierar återställningen med kollegor, tekniker och leverantörer.",
+  "View my LinkedIn profile (opens in a new tab)": "Visa min LinkedIn-profil (öppnas i en ny flik)",
+  "GET IN TOUCH": "TA KONTAKT",
+  "Contact Bilal": "Kontakta Bilal",
+  "To discuss a role or request my CV, contact me directly.": "Kontakta mig direkt för att diskutera en tjänst eller få mitt CV.",
+  "View my LinkedIn profile": "Visa min LinkedIn-profil",
+  "Experience, updates and connections": "Erfarenhet, uppdateringar och kontakter",
+  "Email me": "Mejla mig",
+  "Copy email": "Kopiera e-postadress",
+  "Email copied": "E-postadressen har kopierats",
+  "Copy unavailable. Select the address to copy it.": "Det gick inte att kopiera. Markera adressen och kopiera den."
 }
