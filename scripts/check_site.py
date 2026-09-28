@@ -51,7 +51,7 @@ class PageCheck(HTMLParser):
             self.language_links.append(attrs)
         if tag == 'link' and attrs.get('hreflang'):
             self.alternates.add(attrs['hreflang'])
-        if 'data-draytek-trigger' in attrs:
+        if 'data-product-trigger' in attrs:
             require(all(attrs.get(k) for k in ('data-label-open', 'data-label-closed')), 'Disclosure labels missing')
         if tag == 'a' and attrs.get('href') == SOURCE_URL:
             self.source_links += 1

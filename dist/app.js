@@ -71,27 +71,42 @@ if ('IntersectionObserver' in window) {
   }
 }
 
-// Both DrayTek controls reveal the same on-page experience, including from another tab.
-const draytekPanel = document.getElementById('draytek-experience');
-const draytekTriggers = [...document.querySelectorAll('[data-draytek-trigger]')];
+// Product logos and cards share one disclosure state, including across skill tabs.
+const productTriggers = [...document.querySelectorAll('[data-product-trigger]')];
 const productsTab = document.getElementById('skill-products');
-draytekTriggers.forEach(trigger => {
+function setProductOpen(product, open) {
+  document.getElementById(product + '-experience').hidden = !open;
+  productTriggers.filter(button => button.dataset.productTrigger === product).forEach(button => {
+    button.setAttribute('aria-expanded', String(open));
+    const label = button.querySelector('.brand-action-label, .product-action-label');
+    label.firstChild.textContent = (open ? button.dataset.labelOpen : button.dataset.labelClosed) + ' ';
+    label.querySelector('span').textContent = open ? '−' : '+';
+    if (button.classList.contains('brand-action')) button.setAttribute('aria-label', open ? button.dataset.ariaOpen : button.dataset.ariaClosed);
+  });
+}
+productTriggers.forEach(trigger => {
   trigger.addEventListener('click', () => {
-    const open = draytekPanel.hidden || productsTab.getAttribute('aria-selected') !== 'true';
+    const product = trigger.dataset.productTrigger;
+    const panel = document.getElementById(product + '-experience');
+    const open = panel.hidden || productsTab.getAttribute('aria-selected') !== 'true';
     productsTab.click();
-    draytekPanel.hidden = !open;
-    draytekTriggers.forEach(button => {
-      button.setAttribute('aria-expanded', String(open));
-      const label = button.querySelector('.brand-action-label, .product-action-label');
-      label.firstChild.textContent = (open ? button.dataset.labelOpen : button.dataset.labelClosed) + ' ';
-      label.querySelector('span').textContent = open ? '−' : '+';
-      if (button.classList.contains('brand-action')) button.setAttribute('aria-label', open ? button.dataset.ariaOpen : button.dataset.ariaClosed);
-    });
+    new Set(productTriggers.map(button => button.dataset.productTrigger)).forEach(name => setProductOpen(name, name === product && open));
     if (trigger.classList.contains('brand-action')) {
-      const control = document.getElementById('draytek-toggle');
+      const control = document.getElementById(product + '-toggle');
       control.focus({preventScroll:true});
       control.scrollIntoView({block:'center', behavior:reduceMotion.matches ? 'auto' : 'smooth'});
     }
+    updateScroll();
+  });
+});
+
+document.querySelectorAll('[data-skill-target]').forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const tab = document.getElementById(trigger.dataset.skillTarget);
+    tab.click();
+    const panel = document.getElementById(tab.getAttribute('aria-controls'));
+    panel.focus({preventScroll:true});
+    panel.scrollIntoView({block:'center', behavior:reduceMotion.matches ? 'auto' : 'smooth'});
     updateScroll();
   });
 });

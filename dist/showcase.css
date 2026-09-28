@@ -220,6 +220,15 @@ html[dir] .hero-technical .hero-facts>div+div{border:0;padding:0}
 .toolkit-technical .skill-panels{min-height:0;padding-bottom:15px}
 .toolkit-technical .skill-panels>div>p{max-width:80ch}
 .toolkit-technical .product-grid{max-width:570px}
+.brand-system{display:flex;align-items:center;gap:8px;color:var(--ink)}
+.brand-system>.linux-mark{width:28px;height:28px;filter:invert(1)}
+.product-action{text-align:start}
+.product-item>.product-scope{color:#c7d3df;line-height:1.6}
+.skill-task-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:23px}
+.skill-task-grid>div{border-top:1px solid #3a4d5d;padding-top:14px;min-width:0}
+.skill-task-grid h4{font:500 .87rem/1.5 var(--heading);color:var(--ink)}
+.skill-task-grid p{line-height:1.85;margin-top:7px}
+@media(max-width:760px){.skill-task-grid{grid-template-columns:1fr;gap:14px;margin-top:19px}.skill-task-grid>div{padding-top:12px}.brand-system{gap:5px;font-size:.79rem}.brand-system>.linux-mark{width:22px;height:22px}.brand-system>svg{width:18px;height:18px}.product-item>.product-scope{font-size:.69rem}}
 .perspective-summary{display:grid;grid-template-columns:88px minmax(0,1fr);gap:22px;padding:28px;align-items:center}
 .perspective-summary>div{padding:0}
 .perspective-summary>.about-portrait{position:static;z-index:auto;inset:auto;width:88px;height:110px;max-height:none;object-fit:contain;object-position:center;filter:none;opacity:1;transform:none;mask-image:none;-webkit-mask-image:none;border:0;border-radius:0;background:none}
