@@ -99,7 +99,6 @@
   "24-hour on-call": "مناوبات دعم على مدار الساعة",
   "Provider coordination, customer updates, complaint handling and recovery checks.": "تنسيق مع المزوّدين، وإطلاع العملاء على المستجدات، ومعالجة الشكاوى، والتحقق من استعادة الخدمة.",
   "Additional familiarity": "إلمام إضافي",
-  "AI-assisted automation": "أتمتة بمساعدة الذكاء الاصطناعي",
   "Explore my practical project": "استعرض مشروعي العملي",
   "03 / AUTOMATION & PRACTICAL TOOLING": "03 / الأتمتة والأدوات العملية",
   "Better workflows.": "سير عمل أفضل.",
@@ -142,7 +141,6 @@
   "Interactive controls": "عناصر تفاعلية",
   "Static hosting · Managed HTTPS": "استضافة ثابتة · إدارة HTTPS",
   "Live": "منشور",
-  "AI-assisted development · Reviewed and refined": "تطوير بمساعدة الذكاء الاصطناعي · مراجعة وتحسين",
   "05 / PERSPECTIVE": "05 / خبرة وتواصل",
   "European experience.": "خبرة أوروبية.",
   "Multilingual support.": "ودعم بلغات متعددة.",
@@ -193,9 +191,7 @@
   "03 / PERSONAL PROJECT": "03 / مشروع شخصي",
   "Device-monitoring prototype": "نموذج تجريبي لمتابعة الأجهزة",
   "In development · Live monitoring not validated": "قيد التطوير · لم يُتحقق من المراقبة في بيئة تشغيل فعلية",
-  "An AI-assisted prototype that brings device inventory, status checks and reporting into one view.": "نموذج تجريبي بمساعدة الذكاء الاصطناعي يجمع جرد الأجهزة وفحوص الحالة والتقارير في واجهة واحدة.",
   "Scope and my contribution": "النطاق ومساهمتي",
-  "I defined the requirements, reviewed device readings, flagged missing or stale information and guided refinements. The prototype has not established production reliability or measured time savings.": "حددت المتطلبات، وراجعت قراءات الأجهزة، ونبّهت إلى المعلومات الناقصة أو القديمة، ووجّهت التحسينات. لم تُثبت بعد موثوقية النموذج في التشغيل الفعلي أو أي وفورات زمنية مقاسة.",
   "04 / LANGUAGES & TRAINING": "04 / اللغات والتدريب",
   "Languages": "اللغات",
   "Swedish": "السويدية",
@@ -209,5 +205,8 @@
   "Website source": "كود الموقع",
   "About this website": "عن هذا الموقع",
   "A static HTML, CSS and JavaScript site with English, Swedish and Arabic versions. GitHub records changes and runs checks; Cloudflare Pages provides hosting and managed HTTPS.": "موقع ثابت مبني باستخدام HTML وCSS وJavaScript، بنسخ إنجليزية وسويدية وعربية. يسجّل GitHub التعديلات ويشغّل الفحوص؛ وتتولى Cloudflare Pages الاستضافة وإدارة HTTPS.",
-  "Built with AI assistance. I set the requirements, reviewed the content and design, and requested refinements.": "بُني بمساعدة الذكاء الاصطناعي. حددت المتطلبات، وراجعت المحتوى والتصميم، وطلبت التحسينات."
+  "Tooling prototypes": "نماذج أدوات تجريبية",
+  "I defined the requirements and reviewed how device inventory, status checks and reports are presented.": "حددت المتطلبات وراجعت طريقة عرض جرد الأجهزة وفحوص الحالة والتقارير.",
+  "Implementation was AI-assisted. I reviewed device readings, flagged missing or stale information and guided refinements. The prototype has not established production reliability or measured time savings.": "نُفّذ النموذج بمساعدة الذكاء الاصطناعي. راجعت قراءات الأجهزة، ونبّهت إلى المعلومات الناقصة أو القديمة، ووجّهت التحسينات. لم تُثبت بعد موثوقية النموذج في التشغيل الفعلي أو أي وفورات زمنية مقاسة.",
+  "I set the requirements, reviewed the content and design, and requested refinements. AI assisted the implementation.": "حددت المتطلبات، وراجعت المحتوى والتصميم، وطلبت التحسينات. استُخدم الذكاء الاصطناعي للمساعدة في التنفيذ."
 }

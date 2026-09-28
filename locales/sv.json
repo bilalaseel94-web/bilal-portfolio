@@ -99,7 +99,6 @@
   "24-hour on-call": "Beredskap dygnet runt",
   "Provider coordination, customer updates, complaint handling and recovery checks.": "Leverantörssamordning, kunduppdateringar, klagomålshantering och kontroller efter återställning.",
   "Additional familiarity": "Ytterligare kännedom",
-  "AI-assisted automation": "AI-stödd automatisering",
   "Explore my practical project": "Se mitt praktiska projekt",
   "03 / AUTOMATION & PRACTICAL TOOLING": "03 / AUTOMATISERING OCH PRAKTISKA VERKTYG",
   "Better workflows.": "Bättre arbetsflöden.",
@@ -142,7 +141,6 @@
   "Interactive controls": "Interaktiva funktioner",
   "Static hosting · Managed HTTPS": "Statisk hosting · Hanterad HTTPS",
   "Live": "Publicerad",
-  "AI-assisted development · Reviewed and refined": "AI-stödd utveckling · Granskad och förfinad",
   "05 / PERSPECTIVE": "05 / PERSPEKTIV",
   "European experience.": "Europeisk erfarenhet.",
   "Multilingual support.": "Flerspråkig support.",
@@ -193,9 +191,7 @@
   "03 / PERSONAL PROJECT": "03 / EGET PROJEKT",
   "Device-monitoring prototype": "Prototyp för enhetsövervakning",
   "In development · Live monitoring not validated": "Under utveckling · Övervakning i drift är inte validerad",
-  "An AI-assisted prototype that brings device inventory, status checks and reporting into one view.": "En AI-assisterad prototyp som samlar enhetsinventering, statuskontroller och rapportering i en vy.",
   "Scope and my contribution": "Omfattning och mitt bidrag",
-  "I defined the requirements, reviewed device readings, flagged missing or stale information and guided refinements. The prototype has not established production reliability or measured time savings.": "Jag definierade kraven, granskade enhetsdata, påtalade saknad eller inaktuell information och vägledde förbättringarna. Prototypens driftsäkerhet och eventuella tidsbesparingar har ännu inte verifierats.",
   "04 / LANGUAGES & TRAINING": "04 / SPRÅK OCH UTBILDNING",
   "Languages": "Språk",
   "Swedish": "Svenska",
@@ -209,5 +205,8 @@
   "Website source": "Webbplatsens källkod",
   "About this website": "Om den här webbplatsen",
   "A static HTML, CSS and JavaScript site with English, Swedish and Arabic versions. GitHub records changes and runs checks; Cloudflare Pages provides hosting and managed HTTPS.": "En statisk webbplats i HTML, CSS och JavaScript med engelska, svenska och arabiska versioner. GitHub sparar ändringar och kör kontroller; Cloudflare Pages sköter publicering och HTTPS.",
-  "Built with AI assistance. I set the requirements, reviewed the content and design, and requested refinements.": "Byggd med AI-stöd. Jag ställde kraven, granskade innehåll och design och bad om förbättringar."
+  "Tooling prototypes": "Verktygsprototyper",
+  "I defined the requirements and reviewed how device inventory, status checks and reports are presented.": "Jag definierade kraven och granskade hur enhetsinventering, statuskontroller och rapporter presenteras.",
+  "Implementation was AI-assisted. I reviewed device readings, flagged missing or stale information and guided refinements. The prototype has not established production reliability or measured time savings.": "Implementeringen gjordes med AI-stöd. Jag granskade enhetsdata, påtalade saknad eller inaktuell information och vägledde förbättringarna. Prototypens driftsäkerhet och eventuella tidsbesparingar har ännu inte verifierats.",
+  "I set the requirements, reviewed the content and design, and requested refinements. AI assisted the implementation.": "Jag ställde kraven, granskade innehåll och design och bad om förbättringar. AI användes som stöd vid implementeringen."
 }
