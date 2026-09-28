@@ -112,14 +112,4 @@ document.querySelectorAll('[data-skill-target]').forEach(trigger => {
 });
 
 
-// Keep the same section when choosing another language; links also work without JS.
-const languageLinks = [...document.querySelectorAll('[data-language-link]')];
-function updateLanguageLinks() {
-  languageLinks.forEach(link => {
-    const destination = new URL(link.getAttribute('href'), location.origin);
-    destination.hash = location.hash;
-    link.setAttribute('href', destination.pathname + destination.hash);
-  });
-}
-updateLanguageLinks();
-addEventListener('hashchange', updateLanguageLinks);
+// Language links use their root paths so a new page begins at the introduction.

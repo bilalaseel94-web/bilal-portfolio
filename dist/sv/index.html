@@ -2,6 +2,18 @@
 <html lang="sv" dir="ltr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080d15">
+<script>
+// Every page entry starts with the introduction; in-page navigation stays native.
+(function () {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  function startAtTop() {
+    if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
+    scrollTo({top: 0, left: 0, behavior: 'instant'});
+  }
+  startAtTop();
+  addEventListener('pageshow', startAtTop);
+})();
+</script>
 <title>Bilal Aseel | Teknisk support och IT-service</title>
 <meta name="description" content="Bilal Aseel har erfarenhet från Storbritannien och Sverige inom teknisk support, komplexa eskaleringar, servicesamordning, systemtestning och IT-undervisning. Arabiska och engelska.">
 <meta property="og:title" content="Bilal Aseel | Teknisk support och IT-service"><meta property="og:description" content="Teknisk beredskap för livräddande utrustning inom dygnet-runt-service. Komplexa incidenter, systemtestning och IT-undervisning. Erfarenhet från Storbritannien och Sverige."><meta property="og:type" content="website"><meta property="og:url" content="https://bilalaseel.pages.dev/sv/"><link rel="canonical" href="https://bilalaseel.pages.dev/sv/">

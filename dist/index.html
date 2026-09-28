@@ -2,6 +2,18 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#080d15">
+<script>
+// Every page entry starts with the introduction; in-page navigation stays native.
+(function () {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  function startAtTop() {
+    if (location.hash) history.replaceState(history.state, '', location.pathname + location.search);
+    scrollTo({top: 0, left: 0, behavior: 'instant'});
+  }
+  startAtTop();
+  addEventListener('pageshow', startAtTop);
+})();
+</script>
 <title>Bilal Aseel | Technical Support &amp; Service Operations</title>
 <meta name="description" content="Bilal Aseel brings UK and Swedish experience in technical support, complex escalations, service coordination, systems testing and IT teaching. Arabic and English.">
 <meta property="og:title" content="Bilal Aseel | Technical Support &amp; Service Operations"><meta property="og:description" content="24-hour on-call support for life-saving equipment. Complex incidents, systems testing and IT teaching. UK and Swedish experience."><meta property="og:type" content="website"><meta property="og:url" content="https://bilalaseel.pages.dev/"><link rel="canonical" href="https://bilalaseel.pages.dev/">
