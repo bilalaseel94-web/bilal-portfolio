@@ -275,3 +275,52 @@ html[dir] .hero-with-portrait .hero-facts>div+div{padding-inline-start:25px;bord
 .site-source details{flex:1;max-width:700px}.site-source details>p{font-size:.73rem;line-height:1.85;color:var(--muted);margin-top:15px;max-width:78ch}
 .site-source>.source-link{margin:0;font-size:.7rem;padding:9px 12px;flex:none}
 @media(max-width:760px){.experience-grid .work-content h3{font-size:1.35rem}.project-note{grid-template-columns:1fr;gap:17px;padding-block:23px;margin-block:9px 24px}.project-note h2{font-size:1.4rem}.project-note-content{font-size:.77rem}.site-source{display:block;padding-block:22px;margin-top:22px}.site-source>.source-link{margin-top:19px}.language-levels{max-width:none}}
+
+/* Reading controls and practical skill disclosures. */
+.site-controls{display:flex;align-items:center;gap:10px;margin-inline-start:auto}
+.site-controls .language-switch{margin:0}
+.theme-toggle{display:flex;align-items:center;justify-content:center;gap:6px;padding:7px 10px;min-height:36px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--ink);font:500 .68rem/1.4 var(--body);white-space:nowrap}
+.theme-toggle:hover{border-color:var(--accent)}
+.theme-toggle svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.theme-moon,.theme-dark-label{display:none}
+html[data-theme="light"] .theme-sun,html[data-theme="light"] .theme-light-label{display:none}
+html[data-theme="light"] .theme-moon,html[data-theme="light"] .theme-dark-label{display:block}
+.skill-panels .topic-hint{font-size:.7rem;margin-top:12px}
+.network-topics{gap:8px;margin-top:9px}
+.network-topics button{display:flex;align-items:center;gap:14px;padding:8px 11px;min-height:42px;background:#192633;border:1px solid #456078;border-radius:6px;color:#d3e3f1;font:500 .75rem/1.4 var(--body);text-align:start}
+.network-topics button>span{color:var(--accent);font-size:.95rem}
+.network-topics button:hover,.network-topics button[aria-expanded="true"]{background:#203326;border-color:var(--accent)}
+.network-detail{margin-top:16px;padding:19px 20px;border-inline-start:3px solid var(--accent);border-radius:0 9px 9px 0;background:#102019}
+html[dir="rtl"] .network-detail{border-radius:9px 0 0 9px}
+.network-detail h4{font:600 .9rem/1.5 var(--heading);color:var(--accent)}
+.skill-panels .network-detail p{max-width:76ch;margin-top:7px;line-height:1.85;color:#c5d2ca}
+.network-topics button:focus-visible,.theme-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:760px){.site-controls{gap:8px}.theme-toggle{min-height:34px;padding:6px 8px;font-size:.64rem}.network-detail{padding:16px}.network-topics button{font-size:.73rem}}
+
+@media screen{
+html[data-theme="light"]{color-scheme:light;--bg:#f6f7f3;--surface:#fff;--ink:#172c3a;--muted:#506170;--line:#cbd5d8;--accent:#285c36;--blue:#315e8b}
+html[data-theme="light"] .site-header{background:#f6f7f3f2}
+html[data-theme="light"] .hero-intro,html[data-theme="light"] .main-navigation,html[data-theme="light"] .process-strip,html[data-theme="light"] .experience-points,html[data-theme="light"] .personal-copy>p,html[data-theme="light"] .experience-grid .work-content>.work-outcome,html[data-theme="light"] .project-note-content>.prototype-status{color:var(--muted)}
+html[data-theme="light"] .button,html[data-theme="light"] .skill-tabs button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+html[data-theme="light"] .button:hover,html[data-theme="light"] .skill-tabs button[aria-selected="true"]:hover{background:#1f482a;color:#fff}
+html[data-theme="light"] .language-switch a:hover{background:#e1e9df;color:var(--ink)}
+html[data-theme="light"] .language-switch a[aria-current="page"]{background:var(--accent);color:#fff}
+html[data-theme="light"] .critical-support,html[data-theme="light"] .personal-card,html[data-theme="light"] .perspective-summary{background:linear-gradient(115deg,#edf3e8,#f9fbf8);border-color:#bdd0b6}
+html[data-theme="light"] .critical-support p>span,html[data-theme="light"] .perspective-card .eyebrow{color:var(--muted)}
+html[data-theme="light"] .experience-top{background:linear-gradient(110deg,#edf3e8,transparent)}
+html[data-theme="light"] .work-card,html[data-theme="light"] .toolkit{background:var(--surface);border-color:var(--line);box-shadow:0 6px 22px #172c3a06}
+html[data-theme="light"] .product-item{background:linear-gradient(120deg,#f1f5f7,#fff);border-color:#a8becb}
+html[data-theme="light"] .product-action:hover,html[data-theme="light"] .product-action[aria-expanded="true"],html[data-theme="light"] .brand-action:hover{background:#e8f0e4;border-color:var(--accent)}
+html[data-theme="light"] .product-item>.product-scope,html[data-theme="light"] .familiarity,html[data-theme="light"] .ai-practice{color:var(--muted)}
+html[data-theme="light"] .product-experience,html[data-theme="light"] .network-detail{background:#edf3e8;border-color:#70956c}
+html[data-theme="light"] .product-experience ul,html[data-theme="light"] .skill-panels .network-detail p{color:#354e3d}
+html[data-theme="light"] .product-workflow,html[data-theme="light"] .skill-task-grid>div{border-color:#bdcdbb}
+html[data-theme="light"] .tool-chips>span,html[data-theme="light"] .network-topics button{background:#edf2f6;border-color:#a7bdcc;color:#294558}
+html[data-theme="light"] .network-topics button:hover,html[data-theme="light"] .network-topics button[aria-expanded="true"]{background:#e1edda;border-color:var(--accent)}
+html[data-theme="light"] .skill-tabs button{border-color:#a7bac5}
+html[data-theme="light"] .draytek-mark,html[data-theme="light"] img[alt="Linksys"]{filter:brightness(0);opacity:.85}
+html[data-theme="light"] .brand-system>.linux-mark{filter:none}
+html[data-theme="light"] .brand-word>svg{color:var(--blue)}
+html[data-theme="light"] .source-link:hover{background:#e7efe0}
+}
+@media print{.site-controls{display:none}}

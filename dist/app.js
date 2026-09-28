@@ -112,4 +112,76 @@ document.querySelectorAll('[data-skill-target]').forEach(trigger => {
 });
 
 
-// Language links use their root paths so a new page begins at the introduction.
+// Each network skill reveals one short, on-page account of its practical use.
+const networkTopics = [...document.querySelectorAll('[data-network-topic]')];
+function showNetworkTopic(topic) {
+  networkTopics.forEach(button => {
+    const open = button.dataset.networkTopic === topic;
+    document.getElementById(button.getAttribute('aria-controls')).hidden = !open;
+    button.setAttribute('aria-expanded', String(open));
+    button.querySelector('span').textContent = open ? '−' : '+';
+  });
+  updateScroll();
+}
+networkTopics.forEach(button => button.addEventListener('click', () => {
+  showNetworkTopic(button.getAttribute('aria-expanded') === 'true' ? null : button.dataset.networkTopic);
+}));
+
+const themeButton = document.querySelector('.theme-toggle');
+function updateThemeLabel() {
+  themeButton.setAttribute('aria-label', document.documentElement.dataset.theme === 'light' ? themeButton.dataset.labelOpen : themeButton.dataset.labelClosed);
+}
+updateThemeLabel();
+themeButton.addEventListener('click', () => {
+  const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  window.applyPortfolioTheme(next);
+  try { localStorage.setItem('bilal-portfolio-theme', next); } catch (_) {}
+  updateThemeLabel();
+});
+
+// Transfer reading position and open content only for an explicit language switch.
+const pageSections = [...document.querySelectorAll('main > section[id]')];
+document.querySelectorAll('[data-language-link]').forEach(link => {
+  link.addEventListener('click', event => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (link.getAttribute('aria-current') === 'page') { event.preventDefault(); return; }
+    const readingLine = header.getBoundingClientRect().bottom + 24;
+    const section = pageSections.find(item => item.getBoundingClientRect().bottom > readingLine) || pageSections.at(-1);
+    const bounds = section.getBoundingClientRect();
+    const openProduct = productTriggers.find(button => button.getAttribute('aria-expanded') === 'true');
+    const openTopic = networkTopics.find(button => button.getAttribute('aria-expanded') === 'true');
+    const state = {
+      path: new URL(link.href).pathname,
+      created: Date.now(),
+      section: section.id,
+      ratio: Math.min(1, Math.max(0, (readingLine - bounds.top) / bounds.height)),
+      tab: document.querySelector('[role="tab"][aria-selected="true"]').id,
+      product: openProduct ? openProduct.dataset.productTrigger : null,
+      topic: openTopic ? openTopic.dataset.networkTopic : null,
+      details: pageSections.filter(item => item.querySelector('details[open]')).map(item => item.id)
+    };
+    try { sessionStorage.setItem('bilal-language-entry', JSON.stringify(state)); } catch (_) {}
+  });
+});
+
+const languageEntry = window.portfolioLanguageEntry;
+if (languageEntry) {
+  const selectedTab = document.getElementById(languageEntry.tab);
+  if (selectedTab && selectedTab.matches('[role="tab"]')) selectedTab.click();
+  if (productTriggers.some(button => button.dataset.productTrigger === languageEntry.product)) setProductOpen(languageEntry.product, true);
+  if (networkTopics.some(button => button.dataset.networkTopic === languageEntry.topic)) showNetworkTopic(languageEntry.topic);
+  pageSections.forEach(section => {
+    if (Array.isArray(languageEntry.details) && languageEntry.details.includes(section.id)) section.querySelectorAll('details').forEach(details => { details.open = true; });
+  });
+  addEventListener('pageshow', () => {
+    const section = pageSections.find(item => item.id === languageEntry.section);
+    if (section) {
+      const ratio = Number.isFinite(languageEntry.ratio) ? Math.min(1, Math.max(0, languageEntry.ratio)) : 0;
+      const bounds = section.getBoundingClientRect();
+      const top = scrollY + bounds.top + ratio * bounds.height - header.getBoundingClientRect().height - 24;
+      scrollTo({top: Math.max(0, top), left: 0, behavior: 'instant'});
+    }
+    window.portfolioLanguageEntry = null;
+    updateScroll();
+  }, {once: true});
+}

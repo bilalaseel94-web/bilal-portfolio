@@ -235,5 +235,20 @@
   "Case ownership": "متابعة البلاغات",
   "Track investigations in Freshservice, keep customers updated and handle escalations and complaints.": "أتابع التحقيقات في Freshservice، وأطلع العملاء على المستجدات، وأتعامل مع التصعيدات والشكاوى.",
   "On-call & recovery": "المناوبات واستعادة الخدمة",
-  "Support life-saving equipment on a 24-hour rota, coordinating recovery checks and accountable handovers.": "أدعم المعدات المنقذة للحياة ضمن جدول مناوبات يغطي 24 ساعة، وأنسّق فحوص استعادة الخدمة وتسليم البلاغات بمسؤوليات واضحة."
+  "Support life-saving equipment on a 24-hour rota, coordinating recovery checks and accountable handovers.": "أدعم المعدات المنقذة للحياة ضمن جدول مناوبات يغطي 24 ساعة، وأنسّق فحوص استعادة الخدمة وتسليم البلاغات بمسؤوليات واضحة.",
+  "Switch to light theme": "التبديل إلى المظهر الفاتح",
+  "Switch to dark theme": "التبديل إلى المظهر الداكن",
+  "Light": "فاتح",
+  "Dark": "داكن",
+  "Select a skill to see how I use it.": "اضغط على المهارة لمعرفة كيف أستخدمها.",
+  "IP connectivity": "اتصال IP",
+  "Use connection checks, logs and service status to narrow down whether a reported fault involves device connectivity or the service itself.": "أستخدم فحوص الاتصال والسجلات وحالة الخدمة لتحديد ما إذا كان العطل المُبلّغ عنه مرتبطًا باتصال الجهاز أو بالخدمة نفسها.",
+  "Names & addressing": "الأسماء وعناوين الشبكة",
+  "Check addressing and name-resolution symptoms as part of connectivity investigations, then document findings for further checks.": "أفحص أعراض مشكلات العناوين وحلّ أسماء النطاقات ضمن تشخيص أعطال الاتصال، ثم أوثّق النتائج لاستكمال الفحوص.",
+  "Local & external connections": "الاتصالات المحلية والخارجية",
+  "Investigate local-network and wider connectivity faults using remote router checks, then coordinate with engineers or service providers.": "أشخّص أعطال الشبكة المحلية والاتصال الخارجي عبر فحص أجهزة التوجيه عن بُعد، ثم أنسّق مع المهندسين أو مزودي الخدمة.",
+  "Remote access & mobile connectivity": "الوصول عن بُعد والاتصال الخلوي",
+  "Use VPN access during remote investigations and examine LTE connectivity issues, sharing findings when provider or engineering input is needed.": "أستخدم VPN أثناء تشخيص الأعطال عن بُعد، وأفحص مشكلات اتصال LTE، وأشارك النتائج عند الحاجة إلى تدخل مزود الخدمة أو المهندسين.",
+  "Voice fault investigation": "تشخيص أعطال الاتصال الصوتي",
+  "Review voice and connectivity symptoms alongside logs, coordinate checks and verify recovery with colleagues, engineers and service providers.": "أراجع أعراض مشكلات الصوت والاتصال مع السجلات، وأنسّق الفحوص وأتحقق من استعادة الخدمة مع الزملاء والمهندسين ومزودي الخدمة."
 }

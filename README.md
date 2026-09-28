@@ -11,8 +11,8 @@ I defined the requirements, supplied and checked the professional content, revie
 ## What is here
 
 - **HTML:** semantic content and three complete language versions.
-- **CSS:** responsive dark design, compact experience cards and Arabic right-to-left layout.
-- **JavaScript:** keyboard-accessible skill tabs, product disclosures and language switching that keeps the current section.
+- **CSS:** responsive light and dark themes, compact experience cards and Arabic right-to-left layout.
+- **JavaScript:** keyboard-accessible skill tabs, product and network-skill disclosures, and language switching that keeps the current section and open details.
 - **Python:** standard-library tools that generate translations and check the public build.
 - **GitHub Actions:** checks on changes, with publication to the existing Cloudflare Pages project when publishing access is configured.
 - **Cloudflare Pages:** static hosting and managed HTTPS.
@@ -27,10 +27,13 @@ Use Python 3.12 or newer and Node.js 22 for the syntax check:
 python scripts/build_locales.py
 python scripts/check_site.py
 node --check dist/app.js
+node --check dist/preferences.js
 python -m http.server 4173 --bind 127.0.0.1 --directory site-build
 ```
 
 Open `http://127.0.0.1:4173/`. Stop the preview with Ctrl+C.
+
+The theme choice is saved locally in the visitor's browser. A short-lived session entry preserves reading position only when a language button is used; ordinary visits and refreshes start at the introduction. These preferences are not sent to a server.
 
 ## Make an update
 

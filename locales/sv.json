@@ -235,5 +235,20 @@
   "Case ownership": "Ärendeansvar",
   "Track investigations in Freshservice, keep customers updated and handle escalations and complaints.": "Följer utredningar i Freshservice, håller kunderna uppdaterade och hanterar eskaleringar och klagomål.",
   "On-call & recovery": "Jour och återställning",
-  "Support life-saving equipment on a 24-hour rota, coordinating recovery checks and accountable handovers.": "Ger support för livräddande utrustning enligt ett jourschema som täcker dygnet runt och samordnar återställningskontroller och tydliga överlämningar."
+  "Support life-saving equipment on a 24-hour rota, coordinating recovery checks and accountable handovers.": "Ger support för livräddande utrustning enligt ett jourschema som täcker dygnet runt och samordnar återställningskontroller och tydliga överlämningar.",
+  "Switch to light theme": "Byt till ljust tema",
+  "Switch to dark theme": "Byt till mörkt tema",
+  "Light": "Ljust",
+  "Dark": "Mörkt",
+  "Select a skill to see how I use it.": "Välj en kompetens för att se hur jag använder den.",
+  "IP connectivity": "IP-anslutning",
+  "Use connection checks, logs and service status to narrow down whether a reported fault involves device connectivity or the service itself.": "Använder anslutningskontroller, loggar och tjänstestatus för att ringa in om ett rapporterat fel gäller enhetens anslutning eller själva tjänsten.",
+  "Names & addressing": "Namn och adressering",
+  "Check addressing and name-resolution symptoms as part of connectivity investigations, then document findings for further checks.": "Undersöker symtom kopplade till adressering och namnuppslagning vid anslutningsproblem och dokumenterar resultaten för fortsatta kontroller.",
+  "Local & external connections": "Lokala och externa anslutningar",
+  "Investigate local-network and wider connectivity faults using remote router checks, then coordinate with engineers or service providers.": "Undersöker fel i lokala nätverk och externa anslutningar genom fjärrkontroller av routrar och samordnar med tekniker eller leverantörer.",
+  "Remote access & mobile connectivity": "Fjärråtkomst och mobil anslutning",
+  "Use VPN access during remote investigations and examine LTE connectivity issues, sharing findings when provider or engineering input is needed.": "Använder VPN vid fjärrfelsökning och undersöker LTE-anslutningsproblem samt delar resultaten när leverantörer eller tekniker behöver medverka.",
+  "Voice fault investigation": "Felsökning av telefoni",
+  "Review voice and connectivity symptoms alongside logs, coordinate checks and verify recovery with colleagues, engineers and service providers.": "Granskar symtom på telefoni- och anslutningsproblem tillsammans med loggar, samordnar kontroller och verifierar återställningen med kollegor, tekniker och leverantörer."
 }
