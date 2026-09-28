@@ -239,3 +239,30 @@ html[dir] .hero-with-portrait .hero-facts>div+div{padding-inline-start:25px;bord
 .perspective-summary{display:block}
 @media(max-width:1050px) and (min-width:761px){.hero-with-portrait{grid-template-columns:minmax(0,1.8fr) minmax(180px,.8fr);gap:20px 28px}.hero-with-portrait .hero-portrait{width:215px}}
 @media(max-width:760px){.hero-with-portrait{display:grid;grid-template-columns:1fr;gap:16px;padding-top:18px}.hero-with-portrait .hero-portrait{grid-row:1;width:136px;justify-self:start}.hero-with-portrait .hero-copy{grid-row:2;padding:0}.hero-with-portrait .hero-facts{grid-row:3;gap:12px;padding:20px 0;margin-top:10px}html[dir] .hero-with-portrait .hero-facts>div+div{padding-inline-start:12px}.hero-with-portrait .hero-facts p{font-size:.56rem}.hero-with-portrait h1{margin-top:14px}}
+
+/* Evidence-led hierarchy: employment first, unfinished work and site notes secondary. */
+.experience-grid .work-content h3{font-size:1.35rem;line-height:1.35}
+.role-grade{display:block;font-size:.71rem;font-weight:500;color:var(--muted);margin-top:7px}
+.experience-grid .work-content>.work-outcome{font-size:.72rem;line-height:1.8;margin-top:17px;padding-top:15px;border-top:1px solid var(--line);color:#c6d0dc}
+.work-outcome>strong{display:block;font-size:.65rem;font-weight:600;color:var(--accent);margin-bottom:6px}
+.project-note{display:grid;grid-template-columns:minmax(200px,.8fr) minmax(0,1.5fr);gap:34px;padding-block:25px 30px;margin-block:14px 32px;border-block:1px solid var(--line)}
+.project-note .eyebrow{font-size:.6rem;margin-bottom:11px;color:var(--muted)}
+.project-note h2{font-size:1.45rem;line-height:1.4;letter-spacing:-.03em}
+.project-note-content{font-size:.79rem;line-height:1.8;color:var(--muted)}
+.project-note-content>.prototype-status{font-size:.68rem;margin-bottom:9px;color:#ced5de}
+.project-note details{margin-top:14px}.project-note summary,.site-source summary{cursor:pointer;list-style:none;font-size:.76rem;color:var(--ink);display:flex;justify-content:space-between;gap:20px}
+.project-note summary::-webkit-details-marker,.site-source summary::-webkit-details-marker{display:none}
+.hero-with-portrait .hero-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+.project-note summary:focus-visible,.site-source summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+.project-note details>p{padding-top:12px;max-width:74ch}
+.language-levels{padding:0;margin:20px 0 0;list-style:none;max-width:360px}
+.language-levels li{display:flex;justify-content:space-between;gap:20px;padding:9px 0;font-size:.78rem;line-height:1.6}
+.language-levels li+li{border-top:1px solid var(--line)}
+.language-levels strong{color:var(--muted);font-weight:400}
+.credentials-plain>div{padding-block:12px}
+.credentials-plain strong{font-size:.79rem;font-weight:500}
+.credentials-plain p>span{font-size:.67rem}
+.site-source{display:flex;align-items:start;justify-content:space-between;gap:35px;border-top:1px solid var(--line);padding-block:24px;margin-top:30px}
+.site-source details{flex:1;max-width:700px}.site-source details>p{font-size:.73rem;line-height:1.85;color:var(--muted);margin-top:15px;max-width:78ch}
+.site-source>.source-link{margin:0;font-size:.7rem;padding:9px 12px;flex:none}
+@media(max-width:760px){.experience-grid .work-content h3{font-size:1.35rem}.project-note{grid-template-columns:1fr;gap:17px;padding-block:23px;margin-block:9px 24px}.project-note h2{font-size:1.4rem}.project-note-content{font-size:.77rem}.site-source{display:block;padding-block:22px;margin-top:22px}.site-source>.source-link{margin-top:19px}.language-levels{max-width:none}}
