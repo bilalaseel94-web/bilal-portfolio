@@ -260,5 +260,17 @@
   "Email me": "راسلني بالبريد",
   "Copy email": "نسخ البريد",
   "Email copied": "تم نسخ البريد",
-  "Copy unavailable. Select the address to copy it.": "تعذّر النسخ التلقائي. حدّد العنوان لنسخه."
+  "Copy unavailable. Select the address to copy it.": "تعذّر النسخ التلقائي. حدّد العنوان لنسخه.",
+  "Windows · Linux · SIP/VoIP": "Windows · Linux · SIP/VoIP",
+  "I support life-saving communication systems, investigate complex faults and coordinate service recovery. My experience combines UK technical support and systems testing with IT teaching in Sweden.": "أدعم أنظمة اتصالات منقذة للحياة، وأحقق في الأعطال المعقّدة وأنسّق استعادة الخدمة. تجمع خبرتي بين الدعم التقني واختبار الأنظمة في بريطانيا، وتعليم تقنية المعلومات في السويد.",
+  "Investigate outages and SIP/VoIP faults through Linux logs, remote diagnostics and router checks.": "التحقيق في الانقطاعات وأعطال SIP/VoIP من خلال سجلات Linux والتشخيص عن بُعد وفحوص أجهزة التوجيه.",
+  "Share findings and coordinate next steps with colleagues, engineers and service providers.": "مشاركة نتائج الفحص وتنسيق الخطوات التالية مع الزملاء والمهندسين ومزوّدي الخدمة.",
+  "Explain technical issues clearly, handle complaints and keep customers updated through recovery.": "شرح المشكلات التقنية بوضوح، ومعالجة الشكاوى وإطلاع العملاء على المستجدات أثناء استعادة الخدمة.",
+  "Prioritise by service impact and urgency; coordinate next steps during outages and follow up on SLAs.": "ترتيب الأولويات بحسب أثر العطل ومدى إلحاحه، وتنسيق الخطوات أثناء الانقطاعات ومتابعة اتفاقيات مستوى الخدمة.",
+  "How I work with people": "أسلوبي في التعامل والعمل مع الآخرين",
+  "Clear communication": "تواصل واضح",
+  "Teamwork": "عمل جماعي",
+  "Ownership": "متابعة مسؤولة",
+  "Investigation in practice": "التحقيق التقني عمليًا",
+  "Review symptoms and service impact, examine logs and connectivity, then share evidence with engineers and providers to agree the next checks.": "مراجعة الأعراض وأثرها على الخدمة، وفحص السجلات والاتصال، ثم مشاركة الأدلة مع المهندسين والمزوّدين لتحديد الفحوص التالية."
 }

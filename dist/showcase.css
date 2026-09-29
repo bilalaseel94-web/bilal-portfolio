@@ -367,3 +367,16 @@ html[data-theme="light"] .copy-email{background:#eaf1f6;border-color:#a8bfce;col
 html[data-theme="light"] .copy-email:hover{background:#e1ebdb;color:var(--accent)}
 }
 @media print{.contact-card,.contact-email{background:white;color:black;box-shadow:none}.copy-email,.copy-status{display:none}.contact-linkedin{background:white;border-color:#777;color:black}.contact-linkedin-copy>span{color:#333}}
+
+/* Concise people skills; evidence stays within paid experience. */
+.people-strengths{display:flex;flex-wrap:wrap;gap:8px 19px;list-style:none;margin:18px 0 0;padding:0;color:var(--ink);font-size:.73rem;font-weight:500;line-height:1.8}
+.people-strengths li{display:flex;align-items:center;gap:8px}
+.people-strengths li::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--accent);flex:none}
+.experience-evidence{margin-top:17px;padding-top:15px;border-top:1px solid var(--line)}
+.experience-evidence summary{display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer;list-style:none;color:var(--accent);font-size:.74rem;font-weight:500;line-height:1.7}
+.experience-evidence summary::-webkit-details-marker{display:none}
+.experience-evidence summary::after{content:"+";font-size:1rem}
+.experience-evidence[open] summary::after{content:"−"}
+.experience-evidence>p{margin-top:12px;color:var(--muted);font-size:.74rem;line-height:1.85}
+.experience-evidence .work-outcome{padding-top:12px;border-top:1px solid var(--line)}
+@media(max-width:760px){.people-strengths{font-size:.71rem;gap:6px 16px;margin-top:16px}.experience-evidence>p{font-size:.8rem}}

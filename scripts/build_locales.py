@@ -63,7 +63,10 @@ for locale in ('sv', 'ar'):
     assert not parser.stack
     if parser.missing: raise ValueError(f'{locale}: missing translations: {sorted(parser.missing)}')
     result = ''.join(parser.output)
-    if locale == 'sv': result = result.replace('Professionell <span>erfarenhet</span>', 'Yrkes<span>erfarenhet</span>')
+    # Translate the split heading as a phrase; "Professional" also labels language proficiency.
+    heading = parser.copy['Professional'] + ' <span>' + parser.copy['experience'] + '</span>'
+    experience_heading = 'Yrkes<span>erfarenhet</span>' if locale == 'sv' else 'الخبرات <span>المهنية</span>'
+    result = result.replace(heading, experience_heading)
     target = ROOT / locale / 'index.html'
     target.parent.mkdir(exist_ok=True)
     target.write_text(result, encoding='utf-8')

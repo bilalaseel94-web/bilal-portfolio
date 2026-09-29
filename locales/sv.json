@@ -260,5 +260,17 @@
   "Email me": "Mejla mig",
   "Copy email": "Kopiera e-postadress",
   "Email copied": "E-postadressen har kopierats",
-  "Copy unavailable. Select the address to copy it.": "Det gick inte att kopiera. Markera adressen och kopiera den."
+  "Copy unavailable. Select the address to copy it.": "Det gick inte att kopiera. Markera adressen och kopiera den.",
+  "Windows · Linux · SIP/VoIP": "Windows · Linux · SIP/VoIP",
+  "I support life-saving communication systems, investigate complex faults and coordinate service recovery. My experience combines UK technical support and systems testing with IT teaching in Sweden.": "Jag arbetar med support för livräddande kommunikationssystem, utreder komplexa fel och samordnar återställning av tjänster. Min erfarenhet omfattar teknisk support och systemtestning i Storbritannien samt IT-undervisning i Sverige.",
+  "Investigate outages and SIP/VoIP faults through Linux logs, remote diagnostics and router checks.": "Utreda avbrott och SIP/VoIP-fel med hjälp av Linux-loggar, fjärrdiagnostik och routerkontroller.",
+  "Share findings and coordinate next steps with colleagues, engineers and service providers.": "Dela felsökningsresultat och samordna nästa steg med kollegor, ingenjörer och tjänsteleverantörer.",
+  "Explain technical issues clearly, handle complaints and keep customers updated through recovery.": "Förklara tekniska problem tydligt, hantera klagomål och hålla kunder uppdaterade under återställningen.",
+  "Prioritise by service impact and urgency; coordinate next steps during outages and follow up on SLAs.": "Prioritera utifrån påverkan och brådska, samordna nästa steg vid avbrott och följa upp servicenivåavtal.",
+  "How I work with people": "Så arbetar jag med andra",
+  "Clear communication": "Tydlig kommunikation",
+  "Teamwork": "Samarbete",
+  "Ownership": "Ansvarstagande",
+  "Investigation in practice": "Felsökning i praktiken",
+  "Review symptoms and service impact, examine logs and connectivity, then share evidence with engineers and providers to agree the next checks.": "Granska symtom och påverkan på tjänsten, undersöka loggar och anslutningar och dela underlag med ingenjörer och leverantörer för att komma överens om nästa kontroller."
 }
