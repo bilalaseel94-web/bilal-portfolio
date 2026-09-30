@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "runId": "d1f2ebc8d1df42509e76192b2ff5fcff",
+  "timestampUtc": "2026-09-30T09:21:13.7667323Z",
+  "target": "localhost",
+  "port": 62463,
+  "evidenceSource": "local-run",
+  "stages": [
+    {
+      "name": "dns",
+      "status": "success",
+      "durationMs": 55,
+      "facts": {
+        "selectedAddress": "127.0.0.1",
+        "addresses": [
+          "::1",
+          "127.0.0.1"
+        ]
+      },
+      "reason": null
+    },
+    {
+      "name": "tcp",
+      "status": "success",
+      "durationMs": 21,
+      "facts": {
+        "port": 62463,
+        "address": "127.0.0.1"
+      },
+      "reason": null
+    },
+    {
+      "name": "http",
+      "status": "success",
+      "durationMs": 100,
+      "facts": {
+        "statusCode": 200,
+        "identityVerified": true
+      },
+      "reason": null
+    }
+  ],
+  "finding": "healthy",
+  "nextStep": "The expected local service passed these checks at this time. Preserve this baseline for comparison."
+}

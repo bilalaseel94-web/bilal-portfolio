@@ -21,7 +21,11 @@ No framework or runtime backend is required for visitors. Google Fonts is loaded
 
 The contact section shows the owner's explicitly approved Hotmail address, an email link, a copy action and his LinkedIn profile. It does not send messages from the website. Other private contact information remains excluded from the public build.
 
-## Try it locally
+## Support diagnostics lab
+
+[Project source and instructions](projects/support-diagnostics-lab/README.md) include a loopback-only Python service, a PowerShell DNS/TCP/HTTP checker, saved reports and repeatable tests. The website presents four recorded local scenarios. These are assistant-run software checks; independent learner practice is still pending. The Arabic practice guides help turn the project into hands-on troubleshooting experience.
+
+## Try the portfolio locally
 
 Use Python 3.12 or newer and Node.js 22 for the syntax check:
 

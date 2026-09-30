@@ -10,5 +10,9 @@
   "index.html",
   "showcase.css",
   "sv/index.html",
-  "preferences.js"
+  "preferences.js",
+  "projects/support-diagnostics/healthy.html",
+  "projects/support-diagnostics/service-stopped.html",
+  "projects/support-diagnostics/application-error.html",
+  "projects/support-diagnostics/name-resolution.html"
 ]

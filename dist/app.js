@@ -162,7 +162,8 @@ document.querySelectorAll('[data-language-link]').forEach(link => {
     if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     if (link.getAttribute('aria-current') === 'page') { event.preventDefault(); return; }
     const readingLine = header.getBoundingClientRect().bottom + 24;
-    const section = pageSections.find(item => item.getBoundingClientRect().bottom > readingLine) || pageSections.at(-1);
+    // Include a heading aligned just below the reading line after anchor navigation.
+    const section = pageSections.filter(item => item.getBoundingClientRect().top <= readingLine + 32).at(-1) || pageSections[0];
     const bounds = section.getBoundingClientRect();
     const openProduct = productTriggers.find(button => button.getAttribute('aria-expanded') === 'true');
     const openTopic = networkTopics.find(button => button.getAttribute('aria-expanded') === 'true');
@@ -174,7 +175,8 @@ document.querySelectorAll('[data-language-link]').forEach(link => {
       tab: document.querySelector('[role="tab"][aria-selected="true"]').id,
       product: openProduct ? openProduct.dataset.productTrigger : null,
       topic: openTopic ? openTopic.dataset.networkTopic : null,
-      details: pageSections.filter(item => item.querySelector('details[open]')).map(item => item.id)
+      details: pageSections.flatMap(section => [...section.querySelectorAll('details')]
+        .map((item, index) => item.open ? {section: section.id, index} : null).filter(Boolean))
     };
     try { sessionStorage.setItem('bilal-language-entry', JSON.stringify(state)); } catch (_) {}
   });
@@ -186,9 +188,14 @@ if (languageEntry) {
   if (selectedTab && selectedTab.matches('[role="tab"]')) selectedTab.click();
   if (productTriggers.some(button => button.dataset.productTrigger === languageEntry.product)) setProductOpen(languageEntry.product, true);
   if (networkTopics.some(button => button.dataset.networkTopic === languageEntry.topic)) showNetworkTopic(languageEntry.topic);
-  pageSections.forEach(section => {
-    if (Array.isArray(languageEntry.details) && languageEntry.details.includes(section.id)) section.querySelectorAll('details').forEach(details => { details.open = true; });
-  });
+  if (Array.isArray(languageEntry.details)) {
+    languageEntry.details.forEach(item => {
+      if (!item || !Number.isInteger(item.index) || item.index < 0) return;
+      const section = pageSections.find(section => section.id === item.section);
+      const disclosure = section?.querySelectorAll('details')[item.index];
+      if (disclosure) disclosure.open = true;
+    });
+  }
   addEventListener('pageshow', () => {
     const section = pageSections.find(item => item.id === languageEntry.section);
     if (section) {

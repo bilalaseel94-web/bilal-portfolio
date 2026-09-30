@@ -1,0 +1,51 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support Diagnostics Lab — name not found</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0c121a;color:#e7edf5;font:16px/1.6 system-ui,sans-serif}main{max-width:1050px;margin:auto;padding:40px 24px}header{border-bottom:1px solid #344150;padding-bottom:24px}h1{font-size:clamp(28px,5vw,44px);line-height:1.2;margin:12px 0;text-transform:capitalize}h2{font-size:17px;text-transform:uppercase;margin:0}p{color:#bfcbd9}.eyebrow{color:#cce7a4;text-transform:uppercase;font-size:12px;letter-spacing:.16em}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:28px 0}article,.interpretation{border:1px solid #344150;border-radius:12px;padding:20px;background:#121d29}.row{display:flex;align-items:center;justify-content:space-between;gap:8px}.state{font-size:12px;border:1px solid #8194aa;border-radius:20px;padding:3px 9px}.success{color:#cce7a4;border-color:#698653}.failure,.timeout{color:#ffb5a7;border-color:#ab695d}.skipped{color:#adbacc}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;color:#cbd9e8}.meta{font-size:13px;overflow-wrap:anywhere}footer{font-size:13px;color:#a9b8c9;margin-top:25px}summary{cursor:pointer;color:#cce7a4}@media(max-width:750px){.grid{grid-template-columns:1fr}main{padding:24px 16px}}
+</style><main><header><span class="eyebrow">Local test report · Support Diagnostics Lab</span><h1>name not found</h1>
+<p>missing.support-lab.invalid:8765 · 2026-09-30T09:21:18.4278071Z</p>
+<p class="meta">Source: local-run · Run: 08f7cea323a849b0bf82e073b384fa5a</p></header>
+<section class="grid" aria-label="Observed checks"><article><div class='row'><h2>dns</h2><span class='state failure'>failure</span></div><p>54 ms · name-not-found</p><pre>{
+  &quot;addresses&quot;: [],
+  &quot;selectedAddress&quot;: null
+}</pre></article>
+<article><div class='row'><h2>tcp</h2><span class='state skipped'>skipped</span></div><p>0 ms · dns-check-did-not-pass</p><pre>{}</pre></article>
+<article><div class='row'><h2>http</h2><span class='state skipped'>skipped</span></div><p>0 ms · tcp-check-not-performed</p><pre>{}</pre></article></section>
+<section class="interpretation"><h2>Interpretation and next check</h2><p>Review the name and resolver result. Later checks were not performed; this does not establish a device fault.</p><p>These observations describe this target and time. They do not establish a hardware fault or the health of an entire network.</p></section>
+<details><summary>Complete evidence</summary><pre>{
+  &quot;schemaVersion&quot;: 1,
+  &quot;runId&quot;: &quot;08f7cea323a849b0bf82e073b384fa5a&quot;,
+  &quot;timestampUtc&quot;: &quot;2026-09-30T09:21:18.4278071Z&quot;,
+  &quot;target&quot;: &quot;missing.support-lab.invalid&quot;,
+  &quot;port&quot;: 8765,
+  &quot;evidenceSource&quot;: &quot;local-run&quot;,
+  &quot;stages&quot;: [
+    {
+      &quot;name&quot;: &quot;dns&quot;,
+      &quot;status&quot;: &quot;failure&quot;,
+      &quot;durationMs&quot;: 54,
+      &quot;facts&quot;: {
+        &quot;addresses&quot;: [],
+        &quot;selectedAddress&quot;: null
+      },
+      &quot;reason&quot;: &quot;name-not-found&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tcp&quot;,
+      &quot;status&quot;: &quot;skipped&quot;,
+      &quot;durationMs&quot;: 0,
+      &quot;facts&quot;: {},
+      &quot;reason&quot;: &quot;dns-check-did-not-pass&quot;
+    },
+    {
+      &quot;name&quot;: &quot;http&quot;,
+      &quot;status&quot;: &quot;skipped&quot;,
+      &quot;durationMs&quot;: 0,
+      &quot;facts&quot;: {},
+      &quot;reason&quot;: &quot;tcp-check-not-performed&quot;
+    }
+  ],
+  &quot;finding&quot;: &quot;name-not-found&quot;,
+  &quot;nextStep&quot;: &quot;Review the name and resolver result. Later checks were not performed; this does not establish a device fault.&quot;
+}</pre></details>
+<footer>Synthetic personal lab. This report records a test run, not independent learner completion. Implementation was AI-assisted.</footer></main></html>

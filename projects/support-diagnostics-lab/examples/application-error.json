@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "runId": "cd0c55474eb4461389946bcfe8bcbd71",
+  "timestampUtc": "2026-09-30T09:21:17.6480563Z",
+  "target": "localhost",
+  "port": 62467,
+  "evidenceSource": "local-run",
+  "stages": [
+    {
+      "name": "dns",
+      "status": "success",
+      "durationMs": 41,
+      "facts": {
+        "selectedAddress": "127.0.0.1",
+        "addresses": [
+          "::1",
+          "127.0.0.1"
+        ]
+      },
+      "reason": null
+    },
+    {
+      "name": "tcp",
+      "status": "success",
+      "durationMs": 17,
+      "facts": {
+        "port": 62467,
+        "address": "127.0.0.1"
+      },
+      "reason": null
+    },
+    {
+      "name": "http",
+      "status": "failure",
+      "durationMs": 89,
+      "facts": {
+        "identityVerified": true,
+        "statusCode": 503
+      },
+      "reason": "application-unavailable"
+    }
+  ],
+  "finding": "application-unavailable",
+  "nextStep": "The TCP connection succeeded. Review the application response, restore healthy mode and repeat the complete check."
+}

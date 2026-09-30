@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "runId": "08f7cea323a849b0bf82e073b384fa5a",
+  "timestampUtc": "2026-09-30T09:21:18.4278071Z",
+  "target": "missing.support-lab.invalid",
+  "port": 8765,
+  "evidenceSource": "local-run",
+  "stages": [
+    {
+      "name": "dns",
+      "status": "failure",
+      "durationMs": 54,
+      "facts": {
+        "addresses": [],
+        "selectedAddress": null
+      },
+      "reason": "name-not-found"
+    },
+    {
+      "name": "tcp",
+      "status": "skipped",
+      "durationMs": 0,
+      "facts": {},
+      "reason": "dns-check-did-not-pass"
+    },
+    {
+      "name": "http",
+      "status": "skipped",
+      "durationMs": 0,
+      "facts": {},
+      "reason": "tcp-check-not-performed"
+    }
+  ],
+  "finding": "name-not-found",
+  "nextStep": "Review the name and resolver result. Later checks were not performed; this does not establish a device fault."
+}

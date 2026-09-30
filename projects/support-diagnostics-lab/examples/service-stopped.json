@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "runId": "d0edb167cf3b43ca8a75515a6f579f1f",
+  "timestampUtc": "2026-09-30T09:21:16.6661481Z",
+  "target": "localhost",
+  "port": 62463,
+  "evidenceSource": "local-run",
+  "stages": [
+    {
+      "name": "dns",
+      "status": "success",
+      "durationMs": 42,
+      "facts": {
+        "selectedAddress": "127.0.0.1",
+        "addresses": [
+          "::1",
+          "127.0.0.1"
+        ]
+      },
+      "reason": null
+    },
+    {
+      "name": "tcp",
+      "status": "failure",
+      "durationMs": 2108,
+      "facts": {
+        "address": "127.0.0.1",
+        "port": 62463
+      },
+      "reason": "connection-failed"
+    },
+    {
+      "name": "http",
+      "status": "skipped",
+      "durationMs": 0,
+      "facts": {},
+      "reason": "tcp-check-did-not-pass"
+    }
+  ],
+  "finding": "connection-failed",
+  "nextStep": "Confirm the local lab service is running on this port. A failed connection alone does not identify the underlying cause."
+}
