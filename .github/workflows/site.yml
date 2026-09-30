@@ -32,6 +32,7 @@ jobs:
           python scripts/check_site.py
           node --check dist/app.js
           node --check dist/preferences.js
+          node --check dist/projects/support-diagnostics/walkthrough.js
       - name: Report checks
         run: echo 'Validated English, Swedish, Arabic, source links and public file allowlist.' >> "$GITHUB_STEP_SUMMARY"
 

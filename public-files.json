@@ -16,5 +16,7 @@
   "projects/support-diagnostics/application-error.html",
   "projects/support-diagnostics/name-resolution.html",
   "projects/support-diagnostics/walkthrough.html",
-  "projects/support-diagnostics/recovered.html"
+  "projects/support-diagnostics/recovered.html",
+  "projects/support-diagnostics/walkthrough.css",
+  "projects/support-diagnostics/walkthrough.js"
 ]
