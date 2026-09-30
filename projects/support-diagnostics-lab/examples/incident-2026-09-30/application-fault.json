@@ -1,0 +1,74 @@
+{
+  "case": "application-fault",
+  "evidence": {
+    "schemaVersion": 1,
+    "runId": "94d22a8650bf443fa4629c8634e5d423",
+    "timestampUtc": "2026-09-30T10:03:30.7149472Z",
+    "target": "localhost",
+    "port": 56119,
+    "evidenceSource": "local-run",
+    "stages": [
+      {
+        "name": "dns",
+        "status": "success",
+        "durationMs": 48,
+        "facts": {
+          "selectedAddress": "127.0.0.1",
+          "addresses": [
+            "::1",
+            "127.0.0.1"
+          ]
+        },
+        "reason": null
+      },
+      {
+        "name": "tcp",
+        "status": "success",
+        "durationMs": 18,
+        "facts": {
+          "address": "127.0.0.1",
+          "port": 56119
+        },
+        "reason": null
+      },
+      {
+        "name": "http",
+        "status": "failure",
+        "durationMs": 97,
+        "facts": {
+          "statusCode": 503,
+          "identityVerified": true
+        },
+        "reason": "application-unavailable"
+      }
+    ],
+    "finding": "application-unavailable",
+    "nextStep": "The TCP connection succeeded. Review the application response, restore healthy mode and repeat the complete check."
+  },
+  "manualProbes": [
+    {
+      "command": "Resolve-DnsName localhost -ErrorAction Stop | Select-Object Name,Type,IPAddress | ConvertTo-Json -Compress",
+      "startedUtc": "2026-09-30T10:03:27.887664+00:00",
+      "finishedUtc": "2026-09-30T10:03:28.854678+00:00",
+      "exitCode": 0,
+      "stdout": "[{\"Name\":\"localhost\",\"Type\":28,\"IPAddress\":\"::1\"},{\"Name\":\"localhost\",\"Type\":1,\"IPAddress\":\"127.0.0.1\"}]",
+      "stderr": ""
+    },
+    {
+      "command": "Test-NetConnection 127.0.0.1 -Port 56119 -InformationLevel Quiet -WarningAction SilentlyContinue",
+      "startedUtc": "2026-09-30T10:03:28.854678+00:00",
+      "finishedUtc": "2026-09-30T10:03:30.029698+00:00",
+      "exitCode": 0,
+      "stdout": "True",
+      "stderr": ""
+    },
+    {
+      "command": "curl.exe --noproxy \"*\" --connect-timeout 3 --max-time 5 -i http://127.0.0.1:56119/health",
+      "startedUtc": "2026-09-30T10:03:30.029698+00:00",
+      "finishedUtc": "2026-09-30T10:03:30.080968+00:00",
+      "exitCode": 0,
+      "stdout": "HTTP/1.0 503 Service Unavailable\nServer: BaseHTTP/0.6 Python/3.12.14\nDate: Wed, 30 Sep 2026 10:03:30 GMT\nContent-Type: application/json; charset=utf-8\nContent-Length: 63\nCache-Control: no-store\n\n{\"service\": \"support-diagnostics-lab\", \"status\": \"unavailable\"}",
+      "stderr": "% Total    % Received % Xferd  Average Speed  Time    Time    Time   Current\n                                 Dload  Upload  Total   Spent   Left   Speed\n\n  0      0   0      0   0      0      0      0                              0\n100     63 100     63   0      0  16355      0                              0\n100     63 100     63   0      0  15173      0                              0\n100     63 100     63   0      0  14218      0                              0"
+    }
+  ]
+}

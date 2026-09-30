@@ -1,0 +1,343 @@
+{
+  "recordedDate": "2026-09-30",
+  "performedBy": "assistant",
+  "environment": "Windows; owned IPv4 loopback fixtures",
+  "fixtureControl": "lab/service.py create_server API; application mode changed in the same process on the same port",
+  "productionImpact": "none; synthetic service only",
+  "independentLearnerPractice": "not recorded",
+  "records": [
+    {
+      "case": "baseline",
+      "evidence": {
+        "schemaVersion": 1,
+        "runId": "8ad211c57849499e9d634471fe812c11",
+        "timestampUtc": "2026-09-30T10:03:27.6131393Z",
+        "target": "localhost",
+        "port": 56119,
+        "evidenceSource": "local-run",
+        "stages": [
+          {
+            "name": "dns",
+            "status": "success",
+            "durationMs": 52,
+            "facts": {
+              "addresses": [
+                "::1",
+                "127.0.0.1"
+              ],
+              "selectedAddress": "127.0.0.1"
+            },
+            "reason": null
+          },
+          {
+            "name": "tcp",
+            "status": "success",
+            "durationMs": 23,
+            "facts": {
+              "address": "127.0.0.1",
+              "port": 56119
+            },
+            "reason": null
+          },
+          {
+            "name": "http",
+            "status": "success",
+            "durationMs": 121,
+            "facts": {
+              "identityVerified": true,
+              "statusCode": 200
+            },
+            "reason": null
+          }
+        ],
+        "finding": "healthy",
+        "nextStep": "The expected local service passed these checks at this time. Preserve this baseline for comparison."
+      },
+      "manualProbes": [
+        {
+          "command": "Resolve-DnsName localhost -ErrorAction Stop | Select-Object Name,Type,IPAddress | ConvertTo-Json -Compress",
+          "startedUtc": "2026-09-30T10:03:24.372426+00:00",
+          "finishedUtc": "2026-09-30T10:03:25.495936+00:00",
+          "exitCode": 0,
+          "stdout": "[{\"Name\":\"localhost\",\"Type\":28,\"IPAddress\":\"::1\"},{\"Name\":\"localhost\",\"Type\":1,\"IPAddress\":\"127.0.0.1\"}]",
+          "stderr": ""
+        },
+        {
+          "command": "Test-NetConnection 127.0.0.1 -Port 56119 -InformationLevel Quiet -WarningAction SilentlyContinue",
+          "startedUtc": "2026-09-30T10:03:25.495936+00:00",
+          "finishedUtc": "2026-09-30T10:03:26.740106+00:00",
+          "exitCode": 0,
+          "stdout": "True",
+          "stderr": ""
+        },
+        {
+          "command": "curl.exe --noproxy \"*\" --connect-timeout 3 --max-time 5 -i http://127.0.0.1:56119/health",
+          "startedUtc": "2026-09-30T10:03:26.740106+00:00",
+          "finishedUtc": "2026-09-30T10:03:26.797252+00:00",
+          "exitCode": 0,
+          "stdout": "HTTP/1.0 200 OK\nServer: BaseHTTP/0.6 Python/3.12.14\nDate: Wed, 30 Sep 2026 10:03:26 GMT\nContent-Type: application/json; charset=utf-8\nContent-Length: 54\nCache-Control: no-store\n\n{\"service\": \"support-diagnostics-lab\", \"status\": \"ok\"}",
+          "stderr": "% Total    % Received % Xferd  Average Speed  Time    Time    Time   Current\n                                 Dload  Upload  Total   Spent   Left   Speed\n\n  0      0   0      0   0      0      0      0                              0\n100     54 100     54   0      0   9194      0                              0\n100     54 100     54   0      0   8858      0                              0\n100     54 100     54   0      0   8273      0                              0"
+        }
+      ]
+    },
+    {
+      "case": "application-fault",
+      "evidence": {
+        "schemaVersion": 1,
+        "runId": "94d22a8650bf443fa4629c8634e5d423",
+        "timestampUtc": "2026-09-30T10:03:30.7149472Z",
+        "target": "localhost",
+        "port": 56119,
+        "evidenceSource": "local-run",
+        "stages": [
+          {
+            "name": "dns",
+            "status": "success",
+            "durationMs": 48,
+            "facts": {
+              "selectedAddress": "127.0.0.1",
+              "addresses": [
+                "::1",
+                "127.0.0.1"
+              ]
+            },
+            "reason": null
+          },
+          {
+            "name": "tcp",
+            "status": "success",
+            "durationMs": 18,
+            "facts": {
+              "address": "127.0.0.1",
+              "port": 56119
+            },
+            "reason": null
+          },
+          {
+            "name": "http",
+            "status": "failure",
+            "durationMs": 97,
+            "facts": {
+              "statusCode": 503,
+              "identityVerified": true
+            },
+            "reason": "application-unavailable"
+          }
+        ],
+        "finding": "application-unavailable",
+        "nextStep": "The TCP connection succeeded. Review the application response, restore healthy mode and repeat the complete check."
+      },
+      "manualProbes": [
+        {
+          "command": "Resolve-DnsName localhost -ErrorAction Stop | Select-Object Name,Type,IPAddress | ConvertTo-Json -Compress",
+          "startedUtc": "2026-09-30T10:03:27.887664+00:00",
+          "finishedUtc": "2026-09-30T10:03:28.854678+00:00",
+          "exitCode": 0,
+          "stdout": "[{\"Name\":\"localhost\",\"Type\":28,\"IPAddress\":\"::1\"},{\"Name\":\"localhost\",\"Type\":1,\"IPAddress\":\"127.0.0.1\"}]",
+          "stderr": ""
+        },
+        {
+          "command": "Test-NetConnection 127.0.0.1 -Port 56119 -InformationLevel Quiet -WarningAction SilentlyContinue",
+          "startedUtc": "2026-09-30T10:03:28.854678+00:00",
+          "finishedUtc": "2026-09-30T10:03:30.029698+00:00",
+          "exitCode": 0,
+          "stdout": "True",
+          "stderr": ""
+        },
+        {
+          "command": "curl.exe --noproxy \"*\" --connect-timeout 3 --max-time 5 -i http://127.0.0.1:56119/health",
+          "startedUtc": "2026-09-30T10:03:30.029698+00:00",
+          "finishedUtc": "2026-09-30T10:03:30.080968+00:00",
+          "exitCode": 0,
+          "stdout": "HTTP/1.0 503 Service Unavailable\nServer: BaseHTTP/0.6 Python/3.12.14\nDate: Wed, 30 Sep 2026 10:03:30 GMT\nContent-Type: application/json; charset=utf-8\nContent-Length: 63\nCache-Control: no-store\n\n{\"service\": \"support-diagnostics-lab\", \"status\": \"unavailable\"}",
+          "stderr": "% Total    % Received % Xferd  Average Speed  Time    Time    Time   Current\n                                 Dload  Upload  Total   Spent   Left   Speed\n\n  0      0   0      0   0      0      0      0                              0\n100     63 100     63   0      0  16355      0                              0\n100     63 100     63   0      0  15173      0                              0\n100     63 100     63   0      0  14218      0                              0"
+        }
+      ]
+    },
+    {
+      "case": "recovered",
+      "evidence": {
+        "schemaVersion": 1,
+        "runId": "253788dc8e2246549cd110d9d7157a60",
+        "timestampUtc": "2026-09-30T10:03:33.8085104Z",
+        "target": "localhost",
+        "port": 56119,
+        "evidenceSource": "local-run",
+        "stages": [
+          {
+            "name": "dns",
+            "status": "success",
+            "durationMs": 50,
+            "facts": {
+              "selectedAddress": "127.0.0.1",
+              "addresses": [
+                "::1",
+                "127.0.0.1"
+              ]
+            },
+            "reason": null
+          },
+          {
+            "name": "tcp",
+            "status": "success",
+            "durationMs": 23,
+            "facts": {
+              "address": "127.0.0.1",
+              "port": 56119
+            },
+            "reason": null
+          },
+          {
+            "name": "http",
+            "status": "success",
+            "durationMs": 102,
+            "facts": {
+              "statusCode": 200,
+              "identityVerified": true
+            },
+            "reason": null
+          }
+        ],
+        "finding": "healthy",
+        "nextStep": "The expected local service passed these checks at this time. Preserve this baseline for comparison."
+      },
+      "manualProbes": [
+        {
+          "command": "Resolve-DnsName localhost -ErrorAction Stop | Select-Object Name,Type,IPAddress | ConvertTo-Json -Compress",
+          "startedUtc": "2026-09-30T10:03:30.981956+00:00",
+          "finishedUtc": "2026-09-30T10:03:31.929146+00:00",
+          "exitCode": 0,
+          "stdout": "[{\"Name\":\"localhost\",\"Type\":28,\"IPAddress\":\"::1\"},{\"Name\":\"localhost\",\"Type\":1,\"IPAddress\":\"127.0.0.1\"}]",
+          "stderr": ""
+        },
+        {
+          "command": "Test-NetConnection 127.0.0.1 -Port 56119 -InformationLevel Quiet -WarningAction SilentlyContinue",
+          "startedUtc": "2026-09-30T10:03:31.929146+00:00",
+          "finishedUtc": "2026-09-30T10:03:33.095732+00:00",
+          "exitCode": 0,
+          "stdout": "True",
+          "stderr": ""
+        },
+        {
+          "command": "curl.exe --noproxy \"*\" --connect-timeout 3 --max-time 5 -i http://127.0.0.1:56119/health",
+          "startedUtc": "2026-09-30T10:03:33.095732+00:00",
+          "finishedUtc": "2026-09-30T10:03:33.140573+00:00",
+          "exitCode": 0,
+          "stdout": "HTTP/1.0 200 OK\nServer: BaseHTTP/0.6 Python/3.12.14\nDate: Wed, 30 Sep 2026 10:03:33 GMT\nContent-Type: application/json; charset=utf-8\nContent-Length: 54\nCache-Control: no-store\n\n{\"service\": \"support-diagnostics-lab\", \"status\": \"ok\"}",
+          "stderr": "% Total    % Received % Xferd  Average Speed  Time    Time    Time   Current\n                                 Dload  Upload  Total   Spent   Left   Speed\n\n  0      0   0      0   0      0      0      0                              0\n100     54 100     54   0      0  14626      0                              0\n100     54 100     54   0      0  13698      0                              0\n100     54 100     54   0      0  12756      0                              0"
+        }
+      ]
+    },
+    {
+      "case": "stopped-service",
+      "evidence": {
+        "schemaVersion": 1,
+        "runId": "60de089d7c364dea936e4526a00abbda",
+        "timestampUtc": "2026-09-30T10:03:44.2730526Z",
+        "target": "localhost",
+        "port": 56119,
+        "evidenceSource": "local-run",
+        "stages": [
+          {
+            "name": "dns",
+            "status": "success",
+            "durationMs": 56,
+            "facts": {
+              "selectedAddress": "127.0.0.1",
+              "addresses": [
+                "::1",
+                "127.0.0.1"
+              ]
+            },
+            "reason": null
+          },
+          {
+            "name": "tcp",
+            "status": "failure",
+            "durationMs": 2082,
+            "facts": {
+              "port": 56119,
+              "address": "127.0.0.1"
+            },
+            "reason": "connection-failed"
+          },
+          {
+            "name": "http",
+            "status": "skipped",
+            "durationMs": 0,
+            "facts": {},
+            "reason": "tcp-check-did-not-pass"
+          }
+        ],
+        "finding": "connection-failed",
+        "nextStep": "Confirm the local lab service is running on this port. A failed connection alone does not identify the underlying cause."
+      },
+      "manualProbes": [
+        {
+          "command": "Resolve-DnsName localhost -ErrorAction Stop | Select-Object Name,Type,IPAddress | ConvertTo-Json -Compress",
+          "startedUtc": "2026-09-30T10:03:34.238059+00:00",
+          "finishedUtc": "2026-09-30T10:03:35.337421+00:00",
+          "exitCode": 0,
+          "stdout": "[{\"Name\":\"localhost\",\"Type\":28,\"IPAddress\":\"::1\"},{\"Name\":\"localhost\",\"Type\":1,\"IPAddress\":\"127.0.0.1\"}]",
+          "stderr": ""
+        },
+        {
+          "command": "Test-NetConnection 127.0.0.1 -Port 56119 -InformationLevel Quiet -WarningAction SilentlyContinue",
+          "startedUtc": "2026-09-30T10:03:35.337421+00:00",
+          "finishedUtc": "2026-09-30T10:03:39.052571+00:00",
+          "exitCode": 0,
+          "stdout": "False",
+          "stderr": ""
+        },
+        {
+          "command": "curl.exe --noproxy \"*\" --connect-timeout 3 --max-time 5 -i http://127.0.0.1:56119/health",
+          "startedUtc": "2026-09-30T10:03:39.052571+00:00",
+          "finishedUtc": "2026-09-30T10:03:41.174847+00:00",
+          "exitCode": 7,
+          "stdout": "",
+          "stderr": "curl: (7) Failed to connect to 127.0.0.1:56119 after 2052 ms: Could not connect to server"
+        }
+      ]
+    },
+    {
+      "case": "name-resolution",
+      "evidence": {
+        "schemaVersion": 1,
+        "runId": "48cbc7224f65443dba67f4390664d0db",
+        "timestampUtc": "2026-09-30T10:03:45.2317969Z",
+        "target": "missing.support-lab.invalid",
+        "port": 56119,
+        "evidenceSource": "local-run",
+        "stages": [
+          {
+            "name": "dns",
+            "status": "failure",
+            "durationMs": 55,
+            "facts": {
+              "addresses": [],
+              "selectedAddress": null
+            },
+            "reason": "name-not-found"
+          },
+          {
+            "name": "tcp",
+            "status": "skipped",
+            "durationMs": 0,
+            "facts": {},
+            "reason": "dns-check-did-not-pass"
+          },
+          {
+            "name": "http",
+            "status": "skipped",
+            "durationMs": 0,
+            "facts": {},
+            "reason": "tcp-check-not-performed"
+          }
+        ],
+        "finding": "name-not-found",
+        "nextStep": "Review the name and resolver result. Later checks were not performed; this does not establish a device fault."
+      },
+      "manualProbes": []
+    }
+  ]
+}

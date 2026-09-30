@@ -1,0 +1,69 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Support Diagnostics Lab — healthy</title>
+<style>
+:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0c121a;color:#e7edf5;font:16px/1.6 system-ui,sans-serif}main{max-width:1050px;margin:auto;padding:40px 24px}header{border-bottom:1px solid #344150;padding-bottom:24px}h1{font-size:clamp(28px,5vw,44px);line-height:1.2;margin:12px 0;text-transform:capitalize}h2{font-size:17px;text-transform:uppercase;margin:0}p{color:#bfcbd9}.eyebrow{color:#cce7a4;text-transform:uppercase;font-size:12px;letter-spacing:.16em}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:28px 0}article,.interpretation{border:1px solid #344150;border-radius:12px;padding:20px;background:#121d29}.row{display:flex;align-items:center;justify-content:space-between;gap:8px}.state{font-size:12px;border:1px solid #8194aa;border-radius:20px;padding:3px 9px}.success{color:#cce7a4;border-color:#698653}.failure,.timeout{color:#ffb5a7;border-color:#ab695d}.skipped{color:#adbacc}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;color:#cbd9e8}.meta{font-size:13px;overflow-wrap:anywhere}footer{font-size:13px;color:#a9b8c9;margin-top:25px}summary{cursor:pointer;color:#cce7a4}@media(max-width:750px){.grid{grid-template-columns:1fr}main{padding:24px 16px}}
+</style><main><header><span class="eyebrow">Local test report · Support Diagnostics Lab</span><h1>healthy</h1>
+<p>localhost:56119 · 2026-09-30T10:03:33.8085104Z</p>
+<p class="meta">Source: local-run · Run: 253788dc8e2246549cd110d9d7157a60</p></header>
+<section class="grid" aria-label="Observed checks"><article><div class='row'><h2>dns</h2><span class='state success'>success</span></div><p>50 ms · </p><pre>{
+  &quot;selectedAddress&quot;: &quot;127.0.0.1&quot;,
+  &quot;addresses&quot;: [
+    &quot;::1&quot;,
+    &quot;127.0.0.1&quot;
+  ]
+}</pre></article>
+<article><div class='row'><h2>tcp</h2><span class='state success'>success</span></div><p>23 ms · </p><pre>{
+  &quot;address&quot;: &quot;127.0.0.1&quot;,
+  &quot;port&quot;: 56119
+}</pre></article>
+<article><div class='row'><h2>http</h2><span class='state success'>success</span></div><p>102 ms · </p><pre>{
+  &quot;statusCode&quot;: 200,
+  &quot;identityVerified&quot;: true
+}</pre></article></section>
+<section class="interpretation"><h2>Interpretation and next check</h2><p>The expected local service passed these checks at this time. Preserve this baseline for comparison.</p><p>These observations describe this target and time. They do not establish a hardware fault or the health of an entire network.</p></section>
+<details><summary>Complete evidence</summary><pre>{
+  &quot;schemaVersion&quot;: 1,
+  &quot;runId&quot;: &quot;253788dc8e2246549cd110d9d7157a60&quot;,
+  &quot;timestampUtc&quot;: &quot;2026-09-30T10:03:33.8085104Z&quot;,
+  &quot;target&quot;: &quot;localhost&quot;,
+  &quot;port&quot;: 56119,
+  &quot;evidenceSource&quot;: &quot;local-run&quot;,
+  &quot;stages&quot;: [
+    {
+      &quot;name&quot;: &quot;dns&quot;,
+      &quot;status&quot;: &quot;success&quot;,
+      &quot;durationMs&quot;: 50,
+      &quot;facts&quot;: {
+        &quot;selectedAddress&quot;: &quot;127.0.0.1&quot;,
+        &quot;addresses&quot;: [
+          &quot;::1&quot;,
+          &quot;127.0.0.1&quot;
+        ]
+      },
+      &quot;reason&quot;: null
+    },
+    {
+      &quot;name&quot;: &quot;tcp&quot;,
+      &quot;status&quot;: &quot;success&quot;,
+      &quot;durationMs&quot;: 23,
+      &quot;facts&quot;: {
+        &quot;address&quot;: &quot;127.0.0.1&quot;,
+        &quot;port&quot;: 56119
+      },
+      &quot;reason&quot;: null
+    },
+    {
+      &quot;name&quot;: &quot;http&quot;,
+      &quot;status&quot;: &quot;success&quot;,
+      &quot;durationMs&quot;: 102,
+      &quot;facts&quot;: {
+        &quot;statusCode&quot;: 200,
+        &quot;identityVerified&quot;: true
+      },
+      &quot;reason&quot;: null
+    }
+  ],
+  &quot;finding&quot;: &quot;healthy&quot;,
+  &quot;nextStep&quot;: &quot;The expected local service passed these checks at this time. Preserve this baseline for comparison.&quot;
+}</pre></details>
+<footer>Synthetic personal lab. This report records a test run, not independent learner completion. Implementation was AI-assisted.</footer></main></html>

@@ -387,3 +387,5 @@ html[data-theme="light"] .copy-email:hover{background:#e1ebdb;color:var(--accent
 .project-note .lab-case summary{padding-top:0}
 .lab-case summary>.lab-case-title{font-size:.84rem;line-height:1.5;color:var(--ink)}
 .lab-case[open] summary>span{transform:none}
+
+.lab-intro .lab-recovery{border-inline-start:2px solid var(--accent);padding-inline-start:12px;margin-top:15px}.lab-recovery strong{display:block;font-size:.71rem;color:var(--accent)}.lab-recovery span{display:block;font-size:.75rem}.lab-intro .lab-walkthrough{margin-inline-end:9px;border-color:var(--accent);color:var(--accent)}

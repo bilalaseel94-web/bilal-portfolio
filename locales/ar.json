@@ -300,5 +300,8 @@
   "The code includes repeatable tests, bounded checks and saved JSON/HTML reports. No employer systems or customer data are used.": "يتضمن الكود اختبارات قابلة للتكرار وفحوصًا محدودة النطاق وتقارير JSON/HTML محفوظة. لا تُستخدم أنظمة جهة العمل أو بيانات العملاء.",
   "Earlier work: device-monitoring prototype": "عمل سابق: نموذج أولي لمراقبة الأجهزة",
   "Practical projects": "مشاريع عملية",
-  "Explore the lab": "استكشف المختبر"
+  "Explore the lab": "استكشف المختبر",
+  "Verified recovery": "استعادة موثّقة",
+  "HTTP 503 → 200 on the same test endpoint.": "تحوّلت الاستجابة من HTTP 503 إلى 200 على نقطة الاختبار نفسها.",
+  "Read the incident walkthrough (English)": "اطّلع على خطوات التشخيص والاستعادة (بالإنجليزية)"
 }

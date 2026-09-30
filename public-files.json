@@ -14,5 +14,7 @@
   "projects/support-diagnostics/healthy.html",
   "projects/support-diagnostics/service-stopped.html",
   "projects/support-diagnostics/application-error.html",
-  "projects/support-diagnostics/name-resolution.html"
+  "projects/support-diagnostics/name-resolution.html",
+  "projects/support-diagnostics/walkthrough.html",
+  "projects/support-diagnostics/recovered.html"
 ]

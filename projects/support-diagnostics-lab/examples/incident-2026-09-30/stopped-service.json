@@ -1,0 +1,71 @@
+{
+  "case": "stopped-service",
+  "evidence": {
+    "schemaVersion": 1,
+    "runId": "60de089d7c364dea936e4526a00abbda",
+    "timestampUtc": "2026-09-30T10:03:44.2730526Z",
+    "target": "localhost",
+    "port": 56119,
+    "evidenceSource": "local-run",
+    "stages": [
+      {
+        "name": "dns",
+        "status": "success",
+        "durationMs": 56,
+        "facts": {
+          "selectedAddress": "127.0.0.1",
+          "addresses": [
+            "::1",
+            "127.0.0.1"
+          ]
+        },
+        "reason": null
+      },
+      {
+        "name": "tcp",
+        "status": "failure",
+        "durationMs": 2082,
+        "facts": {
+          "port": 56119,
+          "address": "127.0.0.1"
+        },
+        "reason": "connection-failed"
+      },
+      {
+        "name": "http",
+        "status": "skipped",
+        "durationMs": 0,
+        "facts": {},
+        "reason": "tcp-check-did-not-pass"
+      }
+    ],
+    "finding": "connection-failed",
+    "nextStep": "Confirm the local lab service is running on this port. A failed connection alone does not identify the underlying cause."
+  },
+  "manualProbes": [
+    {
+      "command": "Resolve-DnsName localhost -ErrorAction Stop | Select-Object Name,Type,IPAddress | ConvertTo-Json -Compress",
+      "startedUtc": "2026-09-30T10:03:34.238059+00:00",
+      "finishedUtc": "2026-09-30T10:03:35.337421+00:00",
+      "exitCode": 0,
+      "stdout": "[{\"Name\":\"localhost\",\"Type\":28,\"IPAddress\":\"::1\"},{\"Name\":\"localhost\",\"Type\":1,\"IPAddress\":\"127.0.0.1\"}]",
+      "stderr": ""
+    },
+    {
+      "command": "Test-NetConnection 127.0.0.1 -Port 56119 -InformationLevel Quiet -WarningAction SilentlyContinue",
+      "startedUtc": "2026-09-30T10:03:35.337421+00:00",
+      "finishedUtc": "2026-09-30T10:03:39.052571+00:00",
+      "exitCode": 0,
+      "stdout": "False",
+      "stderr": ""
+    },
+    {
+      "command": "curl.exe --noproxy \"*\" --connect-timeout 3 --max-time 5 -i http://127.0.0.1:56119/health",
+      "startedUtc": "2026-09-30T10:03:39.052571+00:00",
+      "finishedUtc": "2026-09-30T10:03:41.174847+00:00",
+      "exitCode": 7,
+      "stdout": "",
+      "stderr": "curl: (7) Failed to connect to 127.0.0.1:56119 after 2052 ms: Could not connect to server"
+    }
+  ]
+}

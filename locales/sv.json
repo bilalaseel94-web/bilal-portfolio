@@ -300,5 +300,8 @@
   "The code includes repeatable tests, bounded checks and saved JSON/HTML reports. No employer systems or customer data are used.": "Koden innehåller upprepningsbara tester, avgränsade kontroller och sparade JSON/HTML-rapporter. Inga arbetsgivarsystem eller kunduppgifter används.",
   "Earlier work: device-monitoring prototype": "Tidigare arbete: prototyp för enhetsövervakning",
   "Practical projects": "Praktiska projekt",
-  "Explore the lab": "Utforska labbet"
+  "Explore the lab": "Utforska labbet",
+  "Verified recovery": "Verifierad återställning",
+  "HTTP 503 → 200 on the same test endpoint.": "HTTP 503 → 200 på samma testendpoint.",
+  "Read the incident walkthrough (English)": "Läs genomgången av incidenten (engelska)"
 }

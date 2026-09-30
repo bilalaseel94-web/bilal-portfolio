@@ -43,3 +43,7 @@ pwsh -NoProfile -File tests/reports.Tests.ps1
 ```
 
 Tests use local synthetic services and temporary files. They do not establish that Bilal completed the independent exercises. The website must distinguish project technologies from demonstrated personal proficiency.
+
+## Recorded investigation
+
+[Incident walkthrough](docs/RECORDED_INCIDENT.md) follows a real local baseline → injected HTTP 503 → verified recovery sequence, with command transcripts, raw evidence and example customer/technical updates. These are assistant-run observations, not independent owner practice.
