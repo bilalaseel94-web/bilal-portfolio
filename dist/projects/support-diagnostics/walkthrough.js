@@ -69,3 +69,22 @@ document.querySelectorAll('[data-copy-command]').forEach(button => {
     }
   });
 });
+
+// Native dialog provides Escape dismissal and focus management; the image link
+// still works without JavaScript or in browsers without showModal support.
+const captureLink = document.querySelector('[data-open-capture]');
+const captureDialog = document.querySelector('#capture-dialog');
+if (captureLink && captureDialog && typeof captureDialog.showModal === 'function') {
+  captureLink.setAttribute('aria-haspopup', 'dialog');
+  captureLink.addEventListener('click', event => {
+    if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    captureDialog.showModal();
+  });
+  captureDialog.addEventListener('click', event => {
+    if (event.target !== captureDialog) return;
+    const bounds = captureDialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right ||
+        event.clientY < bounds.top || event.clientY > bounds.bottom) captureDialog.close();
+  });
+}
